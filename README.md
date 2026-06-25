@@ -4,7 +4,7 @@ A simple GitHub Pages site containing HTML, CSS, and a bit of JavaScript. This r
 
 ## Live Demo
 If GitHub Pages is enabled for this repository, the site will be available at:
-https://Anmol-Chhetri206.github.io/pages
+(https://pawpal-umber.vercel.app/index.html)
 (If the URL is different, check the repository Pages settings.)
 
 ## Tech stack
