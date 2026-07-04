@@ -4,12 +4,40 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Registration</title>
+	<link rel="icon" type="image/png" href="images/pawpal.png">
 	<link rel="stylesheet" type="text/css" href="style/registerstyle.css">
+	<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700&display=swap" rel="stylesheet">
+  </head>
 </head>
 <body>
-	<h1>Sign Up or Registration form</h1>
-    <div class="container">
-		
+	<div class="container">
+    <div class="toptext">
+        <h1>PawPal</h1>
+        <p>Happy Pets, Happy Hearts</p>
+
+        <h2>Where pets Feel at Home and Heart Feel Happy</h2>
+
+        <p>
+            Login to continue journey in 
+            giving love, care and forever home
+        </p>
+        <div class="information">
+             <div>
+                <h4>Trusted by Pet Parents</h4>
+                <p>10,000+ happy families</p>
+            </div>
+            <div>
+                <h4>Safe & Secure</h4>
+                <p>Your data is always protected</p>
+            </div>
+            <div>
+                <h4>24/7 Support</h4>
+                <p>We're always here to help you.</p>
+            </div>
+        </div>
+    </div>
+    <div class="form-container">
+		<h2>Sign Up or Registration form</h2>
 		<script>
 		function data()
 		{
@@ -18,23 +46,20 @@
 		var contact=document.getElementById('contact').value;
 		var pw=document.getElementById('pw').value;
 		var cpw=document.getElementById('cpw').value;
-		if (fn==""||ln==""|| contact==""|| pw==""|| cpw=="")
-		 {
-		 	alert("All Fields are mandatory");
-		 	return false;
-		 }
-		 else if(pw!=cpw)
-		 {
-		 	alert("Password don't match. Please, Enter same Password");
-		 	return false;
-		 }
-		 else
-		 {
-		 	return true;
-		 }
+		if(fn== "" || ln == "" || contact == "" || pw == "" || cpw == "")
+		{
+		  alert("All Fields are Mandatory...");
+		  return false;
+		}
+		else if(pw!=cpw)
+		{
+			alert("Incorrect Password");
+			return false;
+		}
+		return true;
 		}
 	</script>
-	<form onsubmit="return data()" action="insert.php" method="POST">
+	<form onsubmit="return data()" method="POST">
 		First Name: <br>    <input type="text" id="fname" name="fname" placeholder="Enter Your First Name"><br><br>
 		Last Name:  <br>      <input type="text" id="lname" name="lname" placeholder="Enter Your Last Name"><br><br>
 		Contact:    <br>        <input type="tel" id="contact" name="contact" placeholder="Enter Your Contact Number" pattern="9[78][0-9]{8}"><br><br>
@@ -42,9 +67,9 @@
 		Password:  <br>         <input type="password" id="pw" name="pw"><br><br>
 		Confirm Password: <br>  <input type="password" id="cpw" name="cpw"><br><br>
 		<input type="submit" class="submit" value="Submit">
-
-		<button class="login-btn" onclick="data()"><a href="login.html">Login</a></button>
+        
+		<button class="login-btn"<a href="login.html">Login</a></button>
 	</form>
-    </div>
+</div>
 </body>
 </html>

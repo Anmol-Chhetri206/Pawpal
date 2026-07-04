@@ -1,12 +1,14 @@
-	*{
-    font-family:Arial, sans-serif ;
+*{
+
+    font-family:'Raleway',sans-serif;
 }
 
 body{
-    background-color:rgb(255, 253, 223);;
+    background-color: rgb(255, 253, 223);
 }
+
 .navbar {
-    font-family:'Raleway', sans-serif ;
+    font-family: sans-serif ;
     font-weight: bolder;
     display:flex;
     align-items: center;
@@ -76,127 +78,66 @@ body{
     height:47px;
 }
 
-.container{
-    width: 90%;
-    max-width: 1200px;
-    margin: 20px auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-.toptext{
-    width:80%;
-    padding: 5px 0;
-}
-.toptext h1{
-    font-size: 36px;
-    margin-top:10px;
-    color:#12395b;
-}
-.toptext h2{
-    font-size: 28px;
-    color:orange;
-}
-
-.toptext span{
-    color:orange;
-}
-
-.toptext p{
-    margin-top:10px;
-    color:gray;
-}
-
-.toptext img{
-    width:100%;
-    margin-top:20px;
-    border-radius:10px;
-}
-
-.information{
+.contact-section{
     display:flex;
-    justify-content:space-between;
-    margin-top:20px;
+    justify-content:space-around;
+    align-items:center;
+    padding:60px;
+    gap:50px;
 }
 
-.information h4{
-    color:#12395b;
-}
-
-.form-container{
-    margin-top: 100px;
+.contact-info{
     width:40%;
-    padding:50px;
 }
 
-.form-container h2{
-    text-align:center;
+.contact-info h1{
+    font-size:50px;
+    color:#ff8a1f;
+}
+
+.contact-info p{
+    margin-top:15px;
+    line-height:1.6;
+}
+
+.info-box{
+    margin-top:20px;
+    background:white;
+    padding:20px;
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+}
+
+.contact-form{
+    width:40%;
+}
+
+form{
+    background:white;
+    padding:30px;
+    border-radius:20px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+}
+
+form h2{
     margin-bottom:20px;
 }
 
-input{
+input,
+textarea{
     width:100%;
     padding:12px;
     margin-bottom:15px;
     border:1px solid #ccc;
-    border-radius:5px;
-}
-
-.options{
-    display:flex;
-    justify-content:space-between;
-    margin-bottom:10px;
-    font-size:14px;
-}
-
-.options a{
-    color:orange;
-    text-decoration:none;
+    border-radius:8px;
 }
 
 button{
     width:100%;
     padding:12px;
-    background:orange;
+    background:#ff8a1f;
     color:white;
     border:none;
-    border-radius:5px;
+    border-radius:8px;
     cursor:pointer;
-}
-
-.continue{
-    text-align:center;
-    margin:20px 0;
-}
-
-.social{
-    display:flex;
-    gap:10px;
-}
-
-.social button{
-    background:white;
-    color:black;
-    border:1px solid #ccc;
-}
-
-.form-container p{
-    text-align:center;
-    margin-top:20px;
-}
-
-.form-container a{
-    color:orange;
-    text-decoration:none;
-}
-
-@media(max-width:768px){
-
-    .container{
-        flex-direction:column;
-    }
-
-    .toptext, .form-container{
-        width:100%;
-    }
 }

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PawPal</title>
+     <link rel="icon" type="image/png" href="images/pawpal.png">
+    <link rel="stylesheet" href="style/careerstyle.css">
+   <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700&display=swap" rel="stylesheet">
+  </head>
+    <body>
+        <nav class="navbar">
+      <div class="nav-container">
+        <a href="home.html" class="nav-logo">
+            <img src="images/pawpal.png" alt="" class="nav-icon">PawPal</a>
+        <ul class="nav-menu">
+            <li> <a href="home.html">Home</a></li>
+            <li> <a href="about.html">About</a></li>
+            <li> <a href="adopt.html">Pet Adoption</a></li>
+            <li> <a href="hostel.html">Pet Hostel</a></li>
+            <li> <a href="contact.html">Contact</a></li>
+			<li> <a href="career.html">Career</a></li>
+             <li><a href="login.html" class="btn-nav">LogOut</a></li>
+        </ul>
+     </div>
+    </nav>
+    <div class="container">
+		
+		<script>
+		function data()
+		{
+		var fn=document.getElementById('fname').value;
+		var ln=document.getElementById('lname').value;
+		var contact=document.getElementById('contact').value;
+		var email=document.getElementById('email').value;
+		var file=document.getElementById('file').value;
+		if(email=="" || file=="")
+		{
+			alert("These Fields are required")
+		}
+		}
+	</script>
+	<form onsubmit="return data()" action="insert.php" method="POST">
+		First Name: <br>    <input type="text" id="fname" name="fname" placeholder="Enter Your First Name"><br><br>
+		Last Name:  <br>      <input type="text" id="lname" name="lname" placeholder="Enter Your Last Name"><br><br>
+		Contact:    <br>        <input type="tel" id="contact" name="contact" placeholder="Enter Your Contact Number" pattern="9[78][0-9]{8}"><br><br>
+		Email:     <br>         <input type="email" id="email" name="email" placeholder="Enter Your Email"><br><br>
+        Drop Your CV: <input type="file" id="cv" name="cv" placeholder="Drop Your CV"><br><br>
+		<input type="submit" class="submit" value="Submit">
+	</form>
+    </div>

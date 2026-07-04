@@ -1,7 +1,5 @@
 *{
-    margin:0;
-    padding: 0;
-    box-sizing: border-box;
+    font-family:Arial, sans-serif ;
 }
 body {
     background-color: rgb(255, 253, 223);
@@ -13,11 +11,11 @@ body {
     display:flex;
     align-items: center;
     justify-content:space-between;
-    height: 80px;
+    height: 50px;
     width: 100%;
-    position: sticky;
+    position: fixed;
     top: 0;
-    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0px 20px rgb(242, 238, 185);
     z-index: 999;
     padding: 1rem;
     background-color: rgb(255, 253, 223);
@@ -44,7 +42,7 @@ body {
 .nav-menu{
     display: flex;
     text-align: center;
-    gap: 5.5rem;
+    gap: 2rem;
     list-style: none;
 }
 .nav-menu a {
@@ -62,26 +60,28 @@ body {
     left: 0;
     width: 0;
     height: 2px;
-    background-color: rgb(245, 114, 26); 
+    background-color: rgb(245, 114, 26);  /* orange */
     transition: width 0.3s ease;
 }
 
 .nav-menu a:hover::after {
-    width: 100%;  
+    width: 100%;   /* slides in from left */
 }
 .nav-menu a:hover {
-    color: rgb(245, 114, 26);  
+    color: rgb(245, 114, 26);  /* orange */
     transition: color 0.3s ease;
 }
 .nav-icon{
     width: 50px;
     height:47px;
 }
+
 .active{
     color:#ff8a1f;
 }
 
 .hero{
+    margin-top: 30px;
     display:grid;
     grid-template-columns:1fr 1fr 1fr;
     gap:30px;
@@ -94,12 +94,12 @@ body {
 }
 
 .title-box{
-  
-    padding:15px;
+    padding:10px;
 }
 
 .title-box h1{
-    font-size:55px;
+    margin-top: 100px;
+    font-size:50px;
     line-height:1.1;
 
 }
@@ -109,17 +109,19 @@ body {
 }
 
 .description{
-    margin-top:20px;
-    font-size:22px;
+    margin-top:-10px;
+    font-size:20px;
     line-height:1.6;
     text-align:center;
 }
 
 .center img{
+    margin-top:100px ;
     width:100%;
 }
 
 .card{
+    margin-top: 100px;
     background:white;
     padding:30px;
     border-radius:25px;
@@ -132,7 +134,7 @@ body {
 }
 
 .card p{
-    line-height:1.6;
+    line-height:1.2;
     margin-bottom:20px;
 }
 

@@ -13,31 +13,99 @@
       <div class="nav-container">
         <a href="home.html" class="nav-logo">
             <img src="images/pawpal.png" alt="" class="nav-icon">PawPal</a>
-        <ul class="nav-menu">
-            <li> <a href="home.html">Home</a></li>
-            <li> <a href="about.html">About</a></li>
-            <li> <a href="adopt.html">Adopt</a></li>
-            <li> <a href="contact.html">Contact</a></li>
-             <li><a href="login.html" class="btn-nav">LogOut</a></li>
+         <ul class="nav-menu">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="adopt.html">Pet Adopt</a></li>
+            <li><a href="hostel.html">Pet Hostel</a></li>
+            <li><a href="doctor.html">Pet Doctors</a></li>
+            <li><a href="gallery.html">Pet Gallery</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="career1.html">Career</a></li>
+            <li><a href="login.html" class="btn-nav">LogOut</a></li>
         </ul>
      </div>
     </nav>
-    <section>
+    <header>  
+    <div class="main-content">
+        <div class="left">
+         <h1 class="h1-head">Safely Adopt your Pet..<br>
+           <span class="h">Find Your Forever Friend.<br>"Every paw deserves a loving home, and every home deserves unconditional love."</span>
+            <img src="images/love.png" alt="" class="love">
+         </h1>
+      </div>
+    </div>
+    </header>
+        <main>
         <div class="container">
-            <input type="radio" name="dot" id="one">
-            <input type="radio" name="dot" id="two">
+            <button onclick="previousSlide()" class="slide-button">❮</button>
             <div class ="mainpet-card">
-                <div class="petcards">
+                <div class="petcards" id="slider">
                     <div class="petcard">
                         <div class="content">
                             <div class="img">
-                                <img src="images/husky.jpg" alt="Dog 1">
+                                <img src="images/siberianHusky.jpg" alt="Dog 1">
                             </div>
                             <div class="details">
                                 <div class="petname">Buddy</div>
-                                <div class="petage">Age: 3 years</div>
-                                <div class="petbreed">Breed: Siberian Husky</div>
-                                <div class="number">Contact: 123-456-7890</div>
+                                <button class="openModal">Read More</button>
+                                <div class="modal">
+                                <div class="modal-inner">
+                                    <h2>Buddy</h2>
+                                    <p>Location: Budhanilkantha,Kathmandu<br>
+                                     Age:3 years<br>
+                                     Breed: Siberian Husky<br>
+                                     Contact: +977-9841234567<br>
+                                     Adoption Fee: Rs.15000(negotiable)</p>
+                                    <button class="closeModal">Close</button>
+                                </div>
+                            </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                        <div class="petcard">
+                        <div class="content">
+                            <div class="img">
+                                <img src="images/labrador.jpg" alt="Dog 1">
+                            </div>
+                            <div class="details">
+                                <div class="petname">Simba</div>
+                                <button class="openModal">Read More</button>
+                                <div class="modal">
+                                <div class="modal-inner">
+                                    <h2>Simba</h2>
+                                    <p>Location: Lalitpur,Nepal<br>
+                                     Age:2 years<br>
+                                     Breed: Labrador<br>
+                                     Contact: +977-9851123456<br>
+                                     Adoption Fee: Rs.12000(negotiable)</p>
+                                    <button class="closeModal">Close</button>
+                                </div>
+                            </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <div class="petcard">
+                        <div class="content">
+                            <div class="img">
+                                <img src="images/goldenretriever.jpg" alt="Dog 1">
+                            </div>
+                           <div class="details">
+                                <div class="petname">Lycan</div>
+                                <button class="openModal">Read More</button>
+                                <div class="modal">
+                                <div class="modal-inner">
+                                    <h2>Lycan</h2>
+                                    <p>Location: Bhaktapur,Nepal<br>
+                                     Age:2 years<br>
+                                     Breed: Golden Retriver<br>
+                                     Contact: +977-9861234567<br>
+                                     Adoption Fee: Rs.18000(negotiable)</p>
+                                    <button class="closeModal">Close</button>
+                                </div>
+                            </div>
                             </div>
                             
                         </div>
@@ -49,9 +117,18 @@
                             </div>
                             <div class="details">
                                 <div class="petname">Sheru</div>
-                                <div class="petage">Age: 5 years</div>
-                                <div class="petbreed">Breed: Normal</div>
-                                <div class="number">Contact: 123-456-7890</div>
+                                <button class="openModal">Read More</button>
+                                <div class="modal">
+                                <div class="modal-inner">
+                                    <h2>Sheru</h2>
+                                    <p>Location: Basundhara,Kathmandu<br>
+                                     Age:5 years<br>
+                                     Breed: Nepali Local Dog<br>
+                                     Contact: +977-9801234567
+                                     Adoption Fee: Free</p>
+                                    <button class="closeModal">Close</button>
+                                </div>
+                            </div>
                             </div>
                             
                         </div>
@@ -59,41 +136,68 @@
                     <div class="petcard">
                         <div class="content">
                             <div class="img">
-                                <img src="images/labrador.jpg" alt="Dog 1">
+                                <img src="images/cat3.jpg" alt="Dog 1">
                             </div>
-                            <div class="details">
-                                <div class="petname">Simba</div>
-                                <div class="petage">Age: 2 years</div>
-                                <div class="petbreed">Breed: Labrador</div>
-                                <div class="number">Contact: 123-456-7890</div>
+                           <div class="details">
+                                <div class="petname">Luna</div>
+                                <button class="openModal">Read More</button>
+                                <div class="modal">
+                                <div class="modal-inner">
+                                    <h2>Luna</h2>
+                                    <p>Location: baneshwor,Kathmandu<br>
+                                     Age:8 months<br>
+                                     Breed: Persian Mix<br>
+                                     Contact: +977-9817654321<br>
+                                     Adoption Fee: 5000</p>
+                                    <button class="closeModal">Close</button>
+                                </div>
+                            </div>
                             </div>
                             
                         </div>
                     </div>
-                                        <div class="petcard">
+                    <div class="petcard">
+                        <div class="content">
+                            <div class="img">
+                                <img src="images/cat1.jpg" alt="Dog 1">
+                            </div>
+                            <div class="details">
+                                <div class="petname">Milo</div>
+                                <button class="openModal">Read More</button>
+                                <div class="modal">
+                                <div class="modal-inner">
+                                    <h2>Milo</h2>
+                                    <p>Location: Dillibazar,Kathmandu<br>
+                                     Age:6 months<br>
+                                     Breed: Orange Tabby<br>
+                                     Contact: +977-9817654321<br>
+                                     Adoption Fee: 2500</p>
+                                    <button class="closeModal">Close</button>
+                                </div>
+                            </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <div class="petcard">
                         <div class="content">
                             <div class="img">
                                 <img src="images/cat2.jpg" alt="Dog 1">
                             </div>
-                            <div class="details">
-                                <div class="petname">Billu</div>
-                                <div class="petage">Age: 1 years</div>
-                                <div class="petbreed">Breed:Cat</div>
-                                <div class="number">Contact: 123-456-7890</div>
+                           <div class="details">
+                                <div class="petname">Tuna</div>
+                                <button class="openModal">Read More</button>
+                                <div class="modal">
+                                <div class="modal-inner">
+                                    <h2>Tuna</h2>
+                                    <p>Location: Putalisadak,Kathmandu<br>
+                                     Age:4 months<br>
+                                     Breed: White Domestic Cat<br>
+                                     Contact: +977-9817654321<br>
+                                     Adoption Fee: 3000</p>
+                                    <button class="closeModal">Close</button>
+                                </div>
                             </div>
-                            
-                        </div>
-                    </div>
-                    <div class="petcard">
-                        <div class="content">
-                            <div class="img">
-                                <img src="images/gr.jpg" alt="Dog 1">
-                            </div>
-                            <div class="details">
-                                <div class="petname">Lycan</div>
-                                <div class="petage">Age: 2 years</div>
-                                <div class="petbreed">Breed: Golden Retriever</div>
-                                <div class="number">Contact: 123-456-7890</div>
                             </div>
                             
                         </div>
@@ -103,23 +207,128 @@
                             <div class="img">
                                 <img src="images/cat.jpg" alt="Dog 1">
                             </div>
-                            <div class="details">
-                                <div class="petname">Pookie</div>
-                                <div class="petage">Age: 2 months </div>
-                                <div class="petbreed">Breed: Cat </div>
-                                <div class="number">Contact: 123-456-7890</div>
+                           <div class="details">
+                                <div class="petname">Billu</div>
+                                <button class="openModal">Read More</button>
+                                <div class="modal">
+                                <div class="modal-inner">
+                                    <h2>Billu</h2>
+                                    <p>Location: Tarkeswor,Bhaktapur<br>
+                                     Age:2 months<br>
+                                     Breed: Normal<br>
+                                     Contact: +977-982671075<br>
+                                     Adoption Fee: 6000</p>
+                                    <button class="closeModal">Close</button>
+                                </div>
+                            </div>
                             </div>
                             
                         </div>
                     </div>
-                    
-                </div>
-            </div>
-            <div class="button">
-                <label for="one" class="one active"></label>
-                <label for="two" class="two"></label>
-            </div>
-            </div>
-            </section>
-    </body>
-</html>
+                    <div class="petcard">
+                        <div class="content">
+                            <div class="img">
+                                <img src="images/cat.jpg" alt="Dog 1">
+                            </div>
+                            <div class="details">
+                                <div class="petname">Sweetie</div>
+                                <button class="openModal">Read More</button>
+                                <div class="modal">
+                                <div class="modal-inner">
+                                    <h2>Sweetie</h2>
+                                   <p>Location: Chapali,Kathmandu<br>
+                                     Age:9 months<br>
+                                     Breed: Domestic Cat<br>
+                                     Contact: +977-981234579<br>
+                                     Adoption Fee: 8000</p>
+                                    <button class="closeModal">Close</button>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                   </div>
+            </div> 
+            <button onclick="nextSlide()" class="slide-button">❯</button>
+       </div>
+    </main>
+        <footer id="footer">
+     <div class="footer-container">
+      <div class="footer-links">
+        <h2>Quick Links</h2>
+        <div class="link-container">
+        <div class="links">
+        <a href="">Home</a>
+        <a href="home.html#about">About</a>
+        <a href="home.html#pets">Pets</a>
+      </div>
+      <div class="links">
+        <a href="home.html#requirements">Requirements</a>
+        <a href="home.html#stories">Stories</a>
+        <a href="home.html#footer">Contact Us</a>
+      </div>
+      </div>
+      </div>
+      <div class="footer-brand">
+        <h1>PAWPAL</h1>
+        <p>find your pets now!</p>
+        <div class="socials">
+          <a href=""><i class="fa-brands fa-facebook-f"></i> </a>
+          <a href=""><i class="fa-brands fa-tiktok"></i> </a>
+          <a href=""><i class="fa-brands fa-twitter"></i> </a>
+        </div>
+      </div> 
+      <div class="footer-contact-info">
+        <div class="contact-info-item">
+          <i class="fa-regular fa envelope"></i>
+          <p>Pawpal311@gmail.com</p>
+        </div>
+        <div class="contact-info-item">
+          <i class="fa-solid fa-phone"></i>
+          <p>+977 9841223345</p>
+      </div>
+     </div>
+    </div>
+     <p class="copyright">All Rights Reserved to <b> PAWPAL</b></p>
+       </footer>
+        <script>
+            let position=0;
+            let cardwidth=330;
+            let slider=document.getElementById("slider");
+            function nextSlide()
+            {
+                position = position -cardwidth;
+                if(position<= -(slider.scrollWidth -1000))
+            {
+                position=0;
+            }
+            slider.style.transform=
+            `translateX(${position}px)`;
+            }
+            function previousSlide()
+            {
+                position = position+cardwidth;
+                if(position>0)
+            {
+                position=-(slider.scrollWidth-1000);
+            }
+            slider.style.transform=
+            `translateX(${position}px)`;
+            }
+            const openButton = document.querySelectorAll(".openModal");
+            const closeButton = document.querySelectorAll(".closeModal");
+            const modal = document.querySelectorAll(".modal");
+            openButton.forEach(button => {
+                button.addEventListener("click",()=>{
+                    button.nextElementSibling.classList.add("open");
+                });
+            });
+            closeButton.forEach(button=>
+            {
+               button.addEventListener("click",() =>{
+                button.closest(".modal").classList.remove("open");
+               });
+            });
+        </script>
+        </body>
+        </html>

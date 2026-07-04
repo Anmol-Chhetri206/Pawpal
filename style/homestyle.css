@@ -1,23 +1,20 @@
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Arial,sans-serif;
+    font-family:'Arial', sans-serif ;
 }
 body {
     background-color: rgb(255, 253, 223);
 }
 .navbar {
-    font-family:'Roboto', sans-serif ;
+    font-family:'Raleway', sans-serif ;
     font-weight: bolder;
     display:flex;
     align-items: center;
     justify-content:space-between;
-    height: 80px;
+    height: 50px;
     width: 100%;
-    position: sticky;
+    position: fixed;
     top: 0;
-    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0px 20px rgb(242, 238, 185);
     z-index: 999;
     padding: 1rem;
     background-color: rgb(255, 253, 223);
@@ -44,7 +41,7 @@ body {
 .nav-menu{
     display: flex;
     text-align: center;
-    gap: 5.5rem;
+    gap: 2rem;
     list-style: none;
 }
 .nav-menu a {
@@ -62,15 +59,15 @@ body {
     left: 0;
     width: 0;
     height: 2px;
-    background-color: rgb(245, 114, 26); 
+    background-color: rgb(245, 114, 26);  /* orange */
     transition: width 0.3s ease;
 }
 
 .nav-menu a:hover::after {
-    width: 100%;  
+    width: 100%;   /* slides in from left */
 }
 .nav-menu a:hover {
-    color: rgb(245, 114, 26);  
+    color: rgb(245, 114, 26);  /* orange */
     transition: color 0.3s ease;
 }
 .nav-icon{
@@ -82,19 +79,21 @@ body {
     justify-content: space-between;
 }
 .h1-head{
- margin: 30px 0 0 30px;
- font-size: 60px;
+ margin-top: 160px;
+ margin-left:30px ;
+ font-size: 50px;
  color: rgb(6, 6, 45);
- line-height: 58px;
+ line-height: 50px;
 }
 .h{
     color: rgb(245, 114, 26);
 }
 .description{
-    margin: 5px 0 0 36px;
-    line-height: 20px;
+    word-spacing: 2px;
+    margin: 5px 0 0 25px;
+    line-height: 25px;
     color: rgb(88, 87, 87);
-    font-size: 17px;
+    font-size: 20px;
 }
 .love{
     width: 70px;
@@ -108,40 +107,15 @@ body {
     height: 550px;
     width: 380px;
     border-radius: 20px;
-    box-shadow: 1px 1px 16px;
-    margin: 12px 25px ;
+   box-shadow: 0 0px 20px rgb(79, 78, 78);
+    margin: 100px 25px 0 0 ;
     z-index: 2;
     display: flex;
     justify-content: center;
     gap: 12px;
     flex-direction: column;
     padding: 15px;
-}
-.item{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    line-height:20px;
-    gap: 12px;
-    padding:0 15px;
-}
-
-.item-icon {
-  width: 27px;
-  height: 27px;
-  flex-shrink: 0;
-  color: rgb(245, 114, 26);  /* orange to match your theme */
-}
-
-.item div {
-  display: flex;
-  flex-direction: column;
-  text-align: left;
-}
-.item svg{
-    flex-shrink: 0;
-    width: 40px;
-    height: 40px;
+    gap: 15px;
 }
 .box-1 h2{
     font-size: 20px;  
@@ -154,6 +128,10 @@ body {
     color: rgb(84, 84, 84);
     line-height: 17px;
     margin: 2px 0 0 0;   
+}
+.text{
+    display: flex;
+    flex-direction: column;
 }
 .box-2{
     background: #ff7231;
@@ -178,7 +156,7 @@ body {
 }
 
 .dog-text {
-  color: rgb(255, 32, 32);
+  color: rgb(235, 118, 16);
   font-size: 23px;
   font-weight: bold;
   opacity: 0;                
