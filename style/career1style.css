@@ -5,9 +5,8 @@
 body{
     background-color:rgb(255,253,223);
 }
-
 .navbar {
-    font-family: sans-serif ;
+    font-family:'Raleway', sans-serif ;
     font-weight: bolder;
     display:flex;
     align-items: center;
@@ -41,9 +40,10 @@ body{
 
 }
 .nav-menu{
+    font-size: 15px;
     display: flex;
     text-align: center;
-    gap: 2rem;
+    gap: 1.5rem;
     list-style: none;
 }
 .nav-menu a {
@@ -113,14 +113,6 @@ body{
 .dropdown:hover .dropdown-menu {
   display: block;
 }
-
-.home-img{
-    position: relative;
-    background-image: url(pic/11.jpg);
-    background-size: cover;
-    background-position: center;
-
-}
 .container{
     width: 90%;
     max-width: 1300px;
@@ -159,7 +151,7 @@ body{
     box-shadow: 0 8px 20px rgba(0,0,0,0.15);
 }
 input,
-.dropdown {
+.dropdown-o {
     width:100%;
     padding:12px;
     margin-bottom:15px;
@@ -168,7 +160,7 @@ input,
     box-sizing:border-box;
 }
 input:focus,
-.dropdown:focus{
+.dropdown-o:focus{
     outline:none;
     border-color:#ff8a1f;
     box-shadow:0 0 8px rgba(255,138,31,0.3);
