@@ -13,11 +13,14 @@ function forgot()
         alert("Passwords do not match");
         return;
     }
-    let user = JSON.parse(localStorage.getItem("user"));
-    if(user && email === user.email)
+    let users = JSON.parse(localStorage.getItem("users"));
+    let foundUser = users.find(user =>
+        user.email === email
+    );
+    if(foundUser)
     {
-        user.password = npassword;
-        localStorage.setItem("user", JSON.stringify(user));
+        foundUser.password = npassword;
+        localStorage.setItem("users", JSON.stringify(users));
         alert("Password Changed Successfully");
         window.location.href = "../index.html";
     }
