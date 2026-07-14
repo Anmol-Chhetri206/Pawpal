@@ -1,31 +1,33 @@
-function forgot()
-{
-    let email = document.getElementById("email").value;
-    let npassword = document.getElementById("npassword").value;
-    let cpassword = document.getElementById("cpassword").value;
-    if(email === "" || npassword === "" || cpassword === "")
-    {
-        alert("All fields are mandatory");
-        return;
-    }
-    if(npassword !== cpassword)
-    {
-        alert("Passwords do not match");
-        return;
-    }
-    let users = JSON.parse(localStorage.getItem("users"));
-    let foundUser = users.find(user =>
-        user.email === email
-    );
-    if(foundUser)
-    {
-        foundUser.password = npassword;
-        localStorage.setItem("users", JSON.stringify(users));
-        alert("Password Changed Successfully");
-        window.location.href = "../index.html";
-    }
-    else
-    {
-        alert("Email not found");
-    }
+function forgot(event) {
+  event?.preventDefault();
+
+  const email = document.getElementById('email').value.trim();
+  const newPassword = document.getElementById('npassword').value;
+  const confirmPassword = document.getElementById('cpassword').value;
+
+  if (email === '' || newPassword === '' || confirmPassword === '') {
+    alert('All fields are mandatory');
+    return false;
+  }
+
+  if (newPassword !== confirmPassword) {
+    alert('Passwords do not match');
+    return false;
+  }
+
+  const users = JSON.parse(localStorage.getItem('users')) || [];
+  const foundUser = users.find(user =>
+    String(user.email).toLowerCase() === email.toLowerCase()
+  );
+
+  if (!foundUser) {
+    alert('Email not found');
+    return false;
+  }
+
+  foundUser.password = newPassword;
+  localStorage.setItem('users', JSON.stringify(users));
+  alert('Password changed successfully');
+  window.location.href = '../index.html';
+  return true;
 }
