@@ -11,6 +11,7 @@
 html,
 body {
   margin: 0;
+  font-family: "Manrope", sans-serif;
 }
 
 .pawpal-site-header,
@@ -47,7 +48,7 @@ body {
   border-bottom: 1px solid rgba(23, 24, 63, 0.08);
   background: rgba(255, 253, 241, 0.94);
   box-shadow: 0 8px 30px rgba(23, 24, 63, 0.08);
-  font-family: "Raleway", sans-serif;
+  font-family: "Manrope", sans-serif;
   backdrop-filter: blur(14px);
 }
 
@@ -236,7 +237,7 @@ body {
   padding: 58px 24px 22px;
   background: #211d25;
   color: var(--site-white);
-  font-family: "Raleway", sans-serif;
+  font-family: "Manrope", sans-serif;
 }
 
 .pawpal-footer-grid {

@@ -17,7 +17,7 @@ html {
   scroll-behavior: smooth;
 }
 body {
-  font-family: "Raleway", sans-serif;
+  font-family: "Manrope", sans-serif;
   background: var(--cream);
   color: var(--ink);
   overflow-x: hidden;
@@ -27,7 +27,7 @@ a {
   font: inherit;
 }
 .navbar {
-  font-family: "Raleway", sans-serif;
+  font-family: "Manrope", sans-serif;
   font-weight: bolder;
   display: flex;
   align-items: center;

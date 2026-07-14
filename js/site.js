@@ -3,7 +3,17 @@ document.querySelectorAll('.pawpal-site-header').forEach((header) => {
   const navigation = header.querySelector('.pawpal-nav-content');
   const services = header.querySelector('.pawpal-services');
   const servicesButton = header.querySelector('.pawpal-services-toggle');
+  const accountAction = header.querySelector('.pawpal-nav-action');
   const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+  const isLoggedIn = localStorage.getItem('pawpalLoggedIn') === 'true';
+
+  if (accountAction && isLoggedIn && currentPage !== 'index.html') {
+    accountAction.textContent = 'Log Out';
+    accountAction.setAttribute('aria-label', 'Log out of PawPal');
+    accountAction.addEventListener('click', () => {
+      localStorage.removeItem('pawpalLoggedIn');
+    });
+  }
 
   header.querySelectorAll('a[href]').forEach((link) => {
     const linkedPage = link.getAttribute('href').split('#')[0].split('/').pop();

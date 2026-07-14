@@ -1,6 +1,6 @@
 *{
 
-    font-family:'Raleway',sans-serif;
+    font-family:'Manrope',sans-serif;
 }
 
 body{
@@ -8,7 +8,7 @@ body{
 }
 
 .navbar {
-    font-family: sans-serif ;
+    font-family: 'Manrope', sans-serif;
     font-weight: bolder;
     display:flex;
     align-items: center;
