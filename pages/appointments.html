@@ -135,7 +135,98 @@
       </div>
     </section>
 
+    <section class="saved-bookings" id="saved-bookings" aria-labelledby="bookings-heading">
+      <div class="bookings-heading">
+        <div>
+          <span class="section-label">YOUR VISITS</span>
+          <h2 id="bookings-heading">Upcoming appointments</h2>
+          <p>Your confirmed bookings are saved on this device.</p>
+        </div>
+        <span class="booking-count" aria-live="polite">0 bookings</span>
+      </div>
+      <div class="bookings-list"></div>
+      <div class="bookings-empty">
+        <span><i class="fa-regular fa-calendar-check"></i></span>
+        <h3>No appointments booked yet</h3>
+        <p>Choose a veterinarian above to view available dates and reserve a time.</p>
+      </div>
+    </section>
   </main>
+
+  <dialog class="booking-dialog" id="booking-dialog" aria-labelledby="booking-title">
+    <div class="booking-dialog-shell">
+      <button class="dialog-close" type="button" aria-label="Close booking form"><i class="fa-solid fa-xmark"></i></button>
+
+      <div class="booking-doctor-summary">
+        <img id="booking-doctor-image" src="" alt="">
+        <div>
+          <span class="dialog-label">BOOK AN APPOINTMENT</span>
+          <h2 id="booking-title">Choose your visit</h2>
+          <p id="booking-doctor-specialty"></p>
+          <p class="dialog-help">Follow the four simple steps below to reserve your appointment.</p>
+        </div>
+      </div>
+
+      <form id="booking-form">
+        <input type="hidden" id="booking-doctor" name="doctor">
+        <input type="hidden" id="booking-date" name="date">
+        <input type="hidden" id="booking-time" name="time">
+
+        <fieldset class="booking-fieldset">
+          <legend><span>1</span> How would you like to meet?</legend>
+          <div class="visit-options">
+            <label class="visit-option">
+              <input type="radio" name="visitType" value="Clinic visit" checked>
+              <span class="visit-option-icon"><i class="fa-solid fa-house-medical"></i></span>
+              <span><strong>Clinic visit</strong><small>In-person examination</small></span>
+            </label>
+            <label class="visit-option">
+              <input type="radio" name="visitType" value="Video consultation">
+              <span class="visit-option-icon"><i class="fa-solid fa-video"></i></span>
+              <span><strong>Video consultation</strong><small>Speak to the vet online</small></span>
+            </label>
+          </div>
+        </fieldset>
+
+        <fieldset class="booking-fieldset">
+          <legend><span>2</span> Choose a date</legend>
+          <div class="date-options" role="radiogroup" aria-label="Available appointment dates"></div>
+        </fieldset>
+
+        <fieldset class="booking-fieldset">
+          <legend><span>3</span> Choose a time</legend>
+          <div class="time-options" role="radiogroup" aria-label="Available appointment times"></div>
+          <p class="slot-help"><i class="fa-regular fa-clock"></i> Times are shown in your local time zone.</p>
+        </fieldset>
+
+        <fieldset class="booking-fieldset">
+          <legend><span>4</span> Add your details</legend>
+          <div class="booking-form-grid">
+            <label>Pet's name<input type="text" name="petName" placeholder="e.g. Milo" maxlength="40" required></label>
+            <label>Pet type
+              <select name="petType" required>
+                <option value="">Select pet type</option>
+                <option>Dog</option><option>Cat</option><option>Bird</option>
+                <option>Rabbit</option><option>Other</option>
+              </select>
+            </label>
+            <label>Your name<input type="text" name="ownerName" placeholder="Full name" maxlength="60" required></label>
+            <label>Phone number<input type="tel" name="phone" placeholder="+977 98XXXXXXXX" maxlength="20" required></label>
+            <label class="full-field">Email address <small>(optional)</small><input type="email" name="email" placeholder="you@example.com" maxlength="80"></label>
+            <label class="full-field">Reason for visit <small>(optional)</small><textarea name="reason" rows="3" placeholder="Briefly describe what your pet needs" maxlength="300"></textarea></label>
+          </div>
+        </fieldset>
+
+        <div class="booking-submit-row">
+          <div class="booking-selection-summary">
+            <span>Selected appointment</span>
+            <strong id="selection-summary">Choose a date and time</strong>
+          </div>
+          <button class="confirm-booking" type="submit">Confirm booking <i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+      </form>
+    </div>
+  </dialog>
 
   <div class="toast" role="status" aria-live="polite"><i class="fa-solid fa-circle-check"></i><span></span></div>
 
