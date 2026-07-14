@@ -5,8 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PawPal</title>
      <link rel="icon" type="image/png" href="images/pawpal.png">
-    <link rel="stylesheet" href="../style/loginstyle.css">
+    <link rel="stylesheet" href="style/loginstyle.css">
+    <link rel="stylesheet" href="style/site.css">
     <script src="js/loginscript.js" defer></script>
+    <script src="js/site.js" defer></script>
    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700&display=swap" rel="stylesheet">
        <link
       rel="stylesheet"
@@ -17,26 +19,30 @@
     />
 </head>
     <body>
-         <nav class="navbar">
-      <div class="nav-container">
-        <a href="home.html" class="nav-logo">
-            <img src="../images/pawpal.png" alt="" class="nav-icon">PawPal</a>
-        <ul class="nav-menu">
-          <li><a href="mainHome.html">Home</a></li>
-            <li> <a href="about.html">About</a></li>
-            <li class="dropdown"> <a href="#">Services <i class="fa fa-caret-down"></i></a>
-  <ul class="dropdown-menu">
-    <li><a href="adopt.html">Pet Adoption</a></li>
-    <li><a href="appointments.html">Pet Appointments</a></li>
-    <li><a href="hostel.html">Pet Hostels</a></li>
-    <li><a href="gallery.html">Pet Gallery</a></li>
-  </ul>
-</li>
-            <li> <a href="#">Contact</a></li>
-             <li><a href="index.html" class="btn-nav">Login</a></li>
+  <div class="pawpal-site-header">
+    <nav class="pawpal-site-nav" aria-label="Main navigation">
+      <a class="pawpal-brand" href="pages/home.html"><img src="images/pawpal.png" alt=""><span>PawPal</span></a>
+      <button class="pawpal-menu-toggle" type="button" aria-expanded="false" aria-controls="pawpal-navigation" aria-label="Open navigation menu"><span></span><span></span><span></span></button>
+      <div class="pawpal-nav-content" id="pawpal-navigation">
+        <ul class="pawpal-nav-links">
+          <li><a href="pages/home.html">Home</a></li>
+          <li><a href="pages/about.html">About</a></li>
+          <li class="pawpal-services">
+            <button class="pawpal-services-toggle" type="button" aria-expanded="false">Services <span class="pawpal-chevron" aria-hidden="true">&#9660;</span></button>
+            <ul class="pawpal-submenu">
+              <li><a href="pages/adopt.html">Pet Adoption</a></li>
+              <li><a href="pages/appointments.html">Vet Appointments</a></li>
+              <li><a href="pages/hostel.html">Pet Hostels</a></li>
+              <li><a href="pages/gallery.html">Pet Gallery</a></li>
+            </ul>
+          </li>
+          <li><a href="pages/contact.html">Contact</a></li>
+          <li><a href="pages/career1.html">Careers</a></li>
         </ul>
-     </div>
+        <a class="pawpal-nav-action" href="index.html">Log In</a>
+      </div>
     </nav>
+  </div>
 	<div class="container">
     <div class="toptext">
         <h1>PawPal</h1>
@@ -88,5 +94,29 @@
     </div>
 
 </div>
+  <footer class="pawpal-site-footer">
+    <div class="pawpal-footer-grid">
+      <div class="pawpal-footer-column">
+        <h2>Explore PawPal</h2>
+        <div class="pawpal-footer-links">
+          <a href="pages/home.html">Home</a><a href="pages/about.html">About</a>
+          <a href="pages/adopt.html">Adopt a Pet</a><a href="pages/gallery.html">Gallery</a>
+          <a href="pages/appointments.html">Appointments</a><a href="pages/hostel.html">Pet Hostels</a>
+          <a href="pages/career1.html">Careers</a><a href="pages/contact.html">Contact</a>
+        </div>
+      </div>
+      <div class="pawpal-footer-column pawpal-footer-brand">
+        <img src="images/pawpal.png" alt=""><strong>PawPal</strong>
+        <p>Better care. Happier pets. Forever homes.</p>
+      </div>
+      <div class="pawpal-footer-column pawpal-footer-contact">
+        <h2>Get in touch</h2>
+        <p><a href="mailto:pawpal311@gmail.com">pawpal311@gmail.com</a></p>
+        <p><a href="tel:+9779841223345">+977&nbsp;9841223345</a></p>
+        <p>Kathmandu, Nepal</p>
+      </div>
+    </div>
+    <p class="pawpal-footer-bottom">&copy; 2026 PawPal. All rights reserved.</p>
+  </footer>
 </body>
 </html>

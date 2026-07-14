@@ -1,8 +1,12 @@
 *{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
     font-family:'Raleway', sans-serif ;
 }
 body {
     background-color: rgb(255, 253, 223);
+
 }
 .navbar {
     font-family:'Raleway', sans-serif ;
@@ -10,11 +14,11 @@ body {
     display:flex;
     align-items: center;
     justify-content:space-between;
-    height: 50px;
+    height: 80px;
     width: 100%;
-    position: fixed;
+    position: sticky;
     top: 0;
-    box-shadow: 0 0px 20px rgb(242, 238, 185);
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.5);
     z-index: 999;
     padding: 1rem;
     background-color: rgb(255, 253, 223);
@@ -39,10 +43,9 @@ body {
 
 }
 .nav-menu{
-    font-size: 15px;
     display: flex;
     text-align: center;
-    gap: 1.5rem;
+    gap: 5.5rem;
     list-style: none;
 }
 .nav-menu a {
@@ -60,21 +63,36 @@ body {
     left: 0;
     width: 0;
     height: 2px;
-    background-color: rgb(245, 114, 26);  /* orange */
+    background-color: rgb(245, 114, 26);
     transition: width 0.3s ease;
 }
 
 .nav-menu a:hover::after {
-    width: 100%;   /* slides in from left */
+    width: 100%;
 }
 .nav-menu a:hover {
-    color: rgb(245, 114, 26);  /* orange */
+    color: rgb(245, 114, 26);
     transition: color 0.3s ease;
+}
+.nav-caret {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    margin-left: 6px;
+    vertical-align: middle;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 6px solid currentColor;
+    transition: transform 0.25s ease;
+}
+.dropdown:hover .nav-caret {
+    transform: rotate(180deg);
 }
 .nav-icon{
     width: 50px;
     height:47px;
 }
+
 .nav-menu .dropdown {
   position: relative;
 }
@@ -115,7 +133,7 @@ body {
 
 .home-img{
     position: relative;
-    background-image: url(pic/11.jpg);
+    background-image: url(../images/11.jpg);
     background-size: cover;
     background-position: center;
 
@@ -349,7 +367,7 @@ body {
   transition: transform 0.3s ease;
     top: 0px;
     left: 75px;
-    filter: drop-shadow(-10px 25px 15px rgba(0, 0, 0, 0.8));  
+    filter: drop-shadow(-10px 25px 15px rgba(0, 0, 0, 0.8));
 }
 .dog-container {
   position: absolute;
@@ -373,8 +391,8 @@ body {
   opacity: 0;
   transform: translateY(10px);
   transition: all 0.3s ease;
-  position: absolute;  
-  top: -10px;            
+  position: absolute;
+  top: -10px;
   left: 90px;
   transform: translateX(-50%) translateY(10px);
   white-space: nowrap;
@@ -386,7 +404,7 @@ body {
   color: #ff7231;
 }
 .dog-container:hover .dog1 {
-  transform: scale(1.15);    
+  transform: scale(1.15);
 }     
 
 .dog-container:hover .dog-text {
@@ -703,8 +721,6 @@ body {
     }
 }
 
-
-
 .service-section {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -789,13 +805,13 @@ body {
       text-decoration: none;
       width: fit-content;
       transition: all 0.3s ease;
-  
+
     }
     .btn:hover {
       background: #f96a04f2;
       transform: scale(1.12);
     }
-    
+
 
 
   /* FOOTER */

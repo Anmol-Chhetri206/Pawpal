@@ -1,303 +1,138 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PawPal</title>
-     <link rel="icon" type="image/png" href="../images/pawpal.png">
-    <link rel="stylesheet" href="../style/hostelstyle.css">
-    <script src="../js/hostelscript.js" defer></script>
-   <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700&display=swap" rel="stylesheet">
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-  </head>
-    <body>
-   <nav class="navbar">
-      <div class="nav-container">
-        <a href="home.html" class="nav-logo">
-            <img src="../images/pawpal.png" alt="" class="nav-icon">PawPal</a>
-        <ul class="nav-menu">
-          <li><a href="mainHome.html">Home</a></li>
-            <li> <a href="about.html">About</a></li>
-            <li class="dropdown"> <a href="#">Services <i class="fa fa-caret-down"></i></a>
-  <ul class="dropdown-menu">
-    <li><a href="adopt.html">Pet Adoption</a></li>
-    <li><a href="appointments.html">Pet Appointments</a></li>
-    <li><a href="hostel.html">Pet Hostels</a></li>
-    <li><a href="gallery.html">Pet Gallery</a></li>
-  </ul>
-</li>
-            <li> <a href="contact.html">Contact</a></li>
-             <li><a href="../index.html" class="btn-nav">LogOut</a></li>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Browse pet boarding, grooming, daycare, and veterinary-supported stays in Kathmandu.">
+  <title>Pet Hostels | PawPal</title>
+  <link rel="icon" type="image/png" href="../images/pawpal.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style/hostelstyle.css">
+  <link rel="stylesheet" href="../style/site.css">
+  <script src="../js/site.js" defer></script>
+  <script src="../js/hostelscript.js" defer></script>
+</head>
+<body>
+  <div class="pawpal-site-header">
+    <nav class="pawpal-site-nav" aria-label="Main navigation">
+      <a class="pawpal-brand" href="home.html"><img src="../images/pawpal.png" alt=""><span>PawPal</span></a>
+      <button class="pawpal-menu-toggle" type="button" aria-expanded="false" aria-controls="pawpal-navigation" aria-label="Open navigation menu"><span></span><span></span><span></span></button>
+      <div class="pawpal-nav-content" id="pawpal-navigation">
+        <ul class="pawpal-nav-links">
+          <li><a href="home.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li class="pawpal-services">
+            <button class="pawpal-services-toggle" type="button" aria-expanded="false">Services <span class="pawpal-chevron" aria-hidden="true">&#9660;</span></button>
+            <ul class="pawpal-submenu">
+              <li><a href="adopt.html">Pet Adoption</a></li>
+              <li><a href="appointments.html">Vet Appointments</a></li>
+              <li><a href="hostel.html">Pet Hostels</a></li>
+              <li><a href="gallery.html">Pet Gallery</a></li>
+            </ul>
+          </li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="career1.html">Careers</a></li>
         </ul>
-     </div>
+        <a class="pawpal-nav-action" href="../index.html">Log In</a>
+      </div>
     </nav>
-    <header>  
-    <div class="main-content">
-        <div class="left">
-         <h1 class="h1-head">Book Pet Hostels Now..<br>
-           <span class="h">Where Every Stay Feels Like Home<br>"From cozy beds to playful moments, we make every pet feel loved and cared for."</span>
-            <img src="../images/love.png" alt="" class="love">
-         </h1>
-      </div>
+  </div>
+
+  <header class="hostel-hero">
+    <div class="hostel-hero__content">
+      <span class="hostel-kicker">PET BOARDING IN KATHMANDU</span>
+      <h1>A comfortable stay while you are away.</h1>
+      <p>Compare local pet hostels, review available services, and contact the provider that fits your pet's routine.</p>
+      <a class="hostel-hero__action" href="#hostel-directory">Browse pet hostels <span>&#8595;</span></a>
     </div>
-    </header>
-        <main>
-        <div class="container">
-            <button onclick="previousSlide()" class="slide-button">❮</button>
-            <div class ="mainhostel-card">
-                <div class="hostelcards" id="slider">
-                    <div class="hostelcard">
-                        <div class="content">
-                            <div class="img">
-                                <img src="../images/pawplayandstay.jpg" alt="Dog 1">
-                            </div>
-                            <div class="details">
-                                <div class="hostelname">PAWS Play and Stay</div>
-                                   <button class="open">Read More</button>
-                                <div class="info" >
-                                <div class="info-inner">
-                                    <h2>PAWS Play and Stay</h2>
-                                    <p class="hostelDetails">Location: Chappal Karkhana,Kathmandu<br>
-                                     Pets:Dogs/Cats<br>
-                                     Services: Pet boarding,safe stay,petcare<br>
-                                     Contact: +977-9801233066<br>
-                                    Website:<a href="https://pawsnepal.com/" target="_blank">PAWS Play and Stay</a></p>
-                                    <button class="close">Close</button>
-                                </div>
-                            </div>
-                            </div>
-                            
-                        </div>
-                    </div>
-                        <div class="hostelcard">
-                        <div class="content">
-                            <div class="img">
-                                <img src="../images/pawfect.jpg" alt="Dog 1">
-                            </div>
-                            <div class="details">
-                                <div class="hostelname">PawFect Pets</div>
-                                   <button class="open">Read More</button>
-                                <div class="info">
-                                <div class="info-inner">
-                                    <h2>PawFect Pets</h2>
-                                    <p class="hostelDetails">Location: Shree Panchakumari Marg, Kathmandu<br>
-                                     Pets:Dogs/Cats<br>
-                                     Services: Pet boarding service, pet care<br>
-                                     Contact: +977 9765009811<br>
-                                     Website: Null</p>
-                                    <button class="close">Close</button>
-                                </div>
-                            </div>
-                            </div>
-                            
-                        </div>
-                    </div>
-                    <div class="hostelcard">
-                        <div class="content">
-                            <div class="img">
-                                <img src="../images/ktmpetspa.jpg" alt="Dog 1">
-                            </div>
-                            <div class="details">
-                                <div class="hostelname">Kathmandu Pet SPA Baneshwor</div>
-                                   <button class="open">Read More</button>
-                                <div class="info">
-                                <div class="info-inner">
-                                    <h2>Kathmandu Pet Spa Baneshwor</h2>
-                                   <p class="hostelDetails" >Location: Baneshwor, Kathmandu<br>
-                                     Pets:Dogs<br>
-                                     Services: Dog hostel, grooming, pet care<br>
-                                     Contact: +977 9768383290<br>
-                                    Website:<a href="https://petspa.com.np/" target="_blank">Kathmandu Pet SPA</a></p>
-                                    <button class="close">Close</button>
-                                </div>
-                            </div>
-                            </div>
-                            
-                        </div>
-                    </div>
-                    <div class="hostelcard">
-                        <div class="content">
-                            <div class="img">
-                                <img src="../images/ktmpetspa1.jpg" alt="Dog 1">
-                            </div>
-                            <div class="details">
-                                <div class="hostelname">Kathmandu Pet SPA Pepsicola </div>
-                                   <button class="open">Read More</button>
-                                <div class="info">
-                                <div class="info-inner">
-                                    <h2>Kathmandu Pet Spa Pepsicola</h2>
-                                    <p class="hostelDetails">Location: Pepsicola, Kathmandu<br>
-                                     Pets:Dogs<br>
-                                     Services: Dog boarding, grooming services<br>
-                                     Contact: +977 9768383290<br>
-                                     Website:><a href="" target="_blank">Kathmandu Pet SPA</a> </p>
-                                    <button class="close">Close</button>
-                                </div>
-                            </div>
-                            </div>
-                            
-                        </div>
-                    </div>
-                        <div class="hostelcard">
-                        <div class="content">
-                            <div class="img">
-                                <img src="../images/pethouse.jpg" alt="Dog 1">
-                            </div>
-                            <div class="details">
-                                <div class="hostelname">Pet House & Animal Clinic</div>
-                                   <button class="open">Read More</button>
-                                <div class="info">
-                                <div class="info-inner">
-                                    <h2>Pet House & Animal CLinic</h2>
-                                    <p class="hostelDetails">Location: Boudha, Kathmandu<br>
-                                     Pets:Dogs/Cats<br>
-                                     Services: Pet boarding, daycare, grooming, vaccination, veterinary support<br>
-                                     Contact: +977 9851313717<br>
-                                    Website:<a href="https://www.citypethouse.com.np/">Pet House & Animal Clinic</a></p>
-                                    <button class="close">Close</button>
-                                </div>
-                            </div>
-                            </div>
-                            
-                        </div>
-                    </div>
-                    <div class="hostelcard">
-                        <div class="content">
-                            <div class="img">
-                                <img src="../images/canine.png" alt="Dog 1">
-                            </div>
-                            <div class="details">
-                                <div class="hostelname">Canine Companions</div>
-                                   <button class="open">Read More</button>
-                                <div class="info" >
-                                <div class="info-inner">
-                                    <h2>Canine Companions</h2>
-                                    <p class="hostelDetails">Location: , Bhimsen Marga, Kathmandu<br>
-                                     Pets:Dogs<br>
-                                     Services: Pet boarding, dog care<br>
-                                     Contact: +977 9841423281<br>
-                                    Website:<a href="https://caninecompanions.com.np/">Canine Companions</a></p>
-                                    <button class="close">Close</button>
-                                </div>
-                            </div>
-                            </div>
-                            
-                        </div>
-                    </div>
-                    <div class="hostelcard">
-                        <div class="content">
-                            <div class="img">
-                                <img src="../images/mteverest.jpg" alt="Dog 1">
-                            </div>
-                            <div class="details">
-                                <div class="hostelname">Mount Everest Kennel Club</div>
-                                   <button class="open">Read More</button>
-                                <div class="info" >
-                                <div class="info-inner">
-                                    <h2>Mount Everest Kennel Club</h2>
-                                    <p class="hostelDetails">Location: Baneshwor Height, Kathmandu<br>
-                                     Pets:Dogs<br>
-                                     Services: Kennel/boarding services<br>
-                                     Contact: +977 14595668<br>
-                                    Website: Null</p>
-                                    <button class="close">Close</button>
-                                </div>
-                            </div>
-                            </div>
-                            
-                        </div>
-                    </div>
-                    <div class="hostelcard">
-                        <div class="content">
-                            <div class="img">
-                                <img src="../images/petvilla.jpg" alt="Dog 1">
-                            </div>
-                            <div class="details">
-                                <div class="hostelname">Pet Villa Nepal</div>
-                                   <button class="open">Read More</button>
-                                <div class="info" >
-                                <div class="info-inner">
-                                    <h2>Pet Villa Nepal</h2>
-                                    <p class="hostelDetails">Location: Kirtipur, Kathmandu<br>
-                                     Pets:Dogs/Cats<br>
-                                     Services: Pet boarding, overnight care<br>
-                                     Contact: +977 9851048362 <br>
-                                    Website: Null</p>
-                                    <button class="close">Close</button>
-                                </div>
-                            </div>
-                            </div>
-                            
-                        </div>
-                    </div>
-                      <div class="hostelcard">
-                        <div class="content">
-                            <div class="img">
-                            </div>
-                            <div class="details">
-                                <div class="hostelname"></div>
-                    
-                                <div class="info" >
-                                <div class="info-inner">
-                                    
-                                </div>
-                            </div>
-                            </div>
-                            
-                        </div>
-                    </div>  
-                  
-            </div></div>
-            <button onclick="nextSlide()" class="slide-button">❯</button>
-            </div>
-             
-        </main>
-        <footer id="footer">
-     <div class="footer-container">
-      <div class="footer-links">
-        <h2>Quick Links</h2>
-        <div class="link-container">
-        <div class="links">
-        <a href="mainHome.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="about.html">Adopt Pets</a>
-        <a href="gallery.html">Pet Gallery</a>
-      </div>
-      <div class="links">
-        <a href="doctor.html">Pet Doctors</a>
-        <a href="hostel.html">Pet Hostels</a>
-        <a href="career1.html">Career</a>
-        <a href="contact.html">Contact Us</a>
-      </div>
-      </div>
-      </div>
-      <div class="footer-brand">
-        <h1>PAWPAL</h1>
-        <p>find your pets now!</p>
-        <div class="socials">
-          <a href=""><i class="fa-brands fa-facebook-f"></i> </a>
-          <a href=""><i class="fa-brands fa-tiktok"></i> </a>
-          <a href=""><i class="fa-brands fa-twitter"></i> </a>
-        </div>
-      </div> 
-      <div class="footer-contact-info">
-        <div class="contact-info-item">
-          <i class="fa-regular fa envelope"></i>
-          <p>Pawpal311@gmail.com</p>
-        </div>
-        <div class="contact-info-item">
-          <i class="fa-solid fa-phone"></i>
-          <p>+977 9841223345</p>
-      </div>
-     </div>
+    <div class="hostel-summary" role="group" aria-label="Directory summary">
+      <div><strong>8</strong><span>Local providers</span></div>
+      <div><strong>Dogs &amp; cats</strong><span>Pet-friendly options</span></div>
+      <div><strong>Direct</strong><span>Provider contact</span></div>
     </div>
-     <p class="copyright">All Rights Reserved to <b> PAWPAL</b></p>
-       </footer>
-        </body>
-        </html>
+  </header>
+
+  <main>
+    <section class="hostel-directory" id="hostel-directory" aria-labelledby="hostel-title">
+      <div class="hostel-directory__heading">
+        <div><span class="hostel-kicker">EXPLORE LOCAL STAYS</span><h2 id="hostel-title">Find the right care for your pet</h2><p>Search by provider or location, then narrow the list by the service you need.</p></div>
+        <label class="hostel-search"><span class="sr-only">Search hostels</span><input type="search" id="hostel-search" placeholder="Search name or location"><span aria-hidden="true">&#128269;</span></label>
+      </div>
+
+      <div class="hostel-toolbar">
+        <div class="hostel-filters" role="group" aria-label="Filter hostels by service">
+          <button class="hostel-filter is-active" type="button" data-filter="all">All hostels</button>
+          <button class="hostel-filter" type="button" data-filter="boarding">Boarding</button>
+          <button class="hostel-filter" type="button" data-filter="grooming">Grooming</button>
+          <button class="hostel-filter" type="button" data-filter="veterinary">Vet support</button>
+        </div>
+        <p class="hostel-result-count" aria-live="polite"><strong>8</strong> results</p>
+      </div>
+
+      <div class="hostel-grid">
+        <article class="hostel-card" data-name="PAWS Play and Stay" data-location="Chappal Karkhana, Kathmandu" data-pets="Dogs and cats" data-services="boarding daycare" data-service-label="Boarding, safe stay, and pet care" data-phone="+977 9801233066" data-website="https://pawsnepal.com/">
+          <div class="hostel-card__image"><img src="../images/pawplayandstay.jpg" alt="PAWS Play and Stay facility"><span>Dogs &amp; cats</span></div>
+          <div class="hostel-card__body"><p class="hostel-location">Chappal Karkhana, Kathmandu</p><h3>PAWS Play and Stay</h3><p class="hostel-description">A local boarding option focused on safe stays and everyday pet care.</p><div class="service-tags"><span>Boarding</span><span>Pet care</span></div><button class="hostel-details-button" type="button">View details <span>&#8594;</span></button></div>
+        </article>
+
+        <article class="hostel-card" data-name="PawFect Pets" data-location="Shree Panchakumari Marg, Kathmandu" data-pets="Dogs and cats" data-services="boarding daycare" data-service-label="Pet boarding and general pet care" data-phone="+977 9765009811" data-website="">
+          <div class="hostel-card__image"><img src="../images/pawfect.jpg" alt="PawFect Pets boarding service"><span>Dogs &amp; cats</span></div>
+          <div class="hostel-card__body"><p class="hostel-location">Panchakumari Marg, Kathmandu</p><h3>PawFect Pets</h3><p class="hostel-description">Straightforward boarding and daily care for dogs and cats.</p><div class="service-tags"><span>Boarding</span><span>Pet care</span></div><button class="hostel-details-button" type="button">View details <span>&#8594;</span></button></div>
+        </article>
+
+        <article class="hostel-card" data-name="Kathmandu Pet SPA Baneshwor" data-location="Baneshwor, Kathmandu" data-pets="Dogs" data-services="boarding grooming" data-service-label="Dog hostel, grooming, and pet care" data-phone="+977 9768383290" data-website="https://petspa.com.np/">
+          <div class="hostel-card__image"><img src="../images/ktmpetspa.jpg" alt="Kathmandu Pet SPA Baneshwor"><span>Dogs</span></div>
+          <div class="hostel-card__body"><p class="hostel-location">Baneshwor, Kathmandu</p><h3>Kathmandu Pet SPA Baneshwor</h3><p class="hostel-description">Dog boarding with convenient grooming and pet-care services.</p><div class="service-tags"><span>Boarding</span><span>Grooming</span></div><button class="hostel-details-button" type="button">View details <span>&#8594;</span></button></div>
+        </article>
+
+        <article class="hostel-card" data-name="Kathmandu Pet SPA Pepsicola" data-location="Pepsicola, Kathmandu" data-pets="Dogs" data-services="boarding grooming" data-service-label="Dog boarding and grooming services" data-phone="+977 9768383290" data-website="https://petspa.com.np/">
+          <div class="hostel-card__image"><img src="../images/ktmpetspa1.jpg" alt="Kathmandu Pet SPA Pepsicola"><span>Dogs</span></div>
+          <div class="hostel-card__body"><p class="hostel-location">Pepsicola, Kathmandu</p><h3>Kathmandu Pet SPA Pepsicola</h3><p class="hostel-description">A Pepsicola location offering dog boarding and grooming.</p><div class="service-tags"><span>Boarding</span><span>Grooming</span></div><button class="hostel-details-button" type="button">View details <span>&#8594;</span></button></div>
+        </article>
+
+        <article class="hostel-card" data-name="Pet House and Animal Clinic" data-location="Boudha, Kathmandu" data-pets="Dogs and cats" data-services="boarding grooming veterinary daycare" data-service-label="Boarding, daycare, grooming, vaccination, and veterinary support" data-phone="+977 9851313717" data-website="https://www.citypethouse.com.np/">
+          <div class="hostel-card__image"><img src="../images/pethouse.jpg" alt="Pet House and Animal Clinic"><span>Dogs &amp; cats</span></div>
+          <div class="hostel-card__body"><p class="hostel-location">Boudha, Kathmandu</p><h3>Pet House &amp; Animal Clinic</h3><p class="hostel-description">Boarding and daycare with grooming, vaccination, and clinical support.</p><div class="service-tags"><span>Boarding</span><span>Vet support</span></div><button class="hostel-details-button" type="button">View details <span>&#8594;</span></button></div>
+        </article>
+
+        <article class="hostel-card" data-name="Canine Companions" data-location="Bhimsen Marga, Kathmandu" data-pets="Dogs" data-services="boarding daycare" data-service-label="Pet boarding and dog care" data-phone="+977 9841423281" data-website="https://caninecompanions.com.np/">
+          <div class="hostel-card__image"><img src="../images/canine.png" alt="Canine Companions"><span>Dogs</span></div>
+          <div class="hostel-card__body"><p class="hostel-location">Bhimsen Marga, Kathmandu</p><h3>Canine Companions</h3><p class="hostel-description">Dedicated dog boarding and care in a local setting.</p><div class="service-tags"><span>Boarding</span><span>Dog care</span></div><button class="hostel-details-button" type="button">View details <span>&#8594;</span></button></div>
+        </article>
+
+        <article class="hostel-card" data-name="Mount Everest Kennel Club" data-location="Baneshwor Height, Kathmandu" data-pets="Dogs" data-services="boarding" data-service-label="Kennel and boarding services" data-phone="+977 14595668" data-website="">
+          <div class="hostel-card__image"><img src="../images/mteverest.jpg" alt="Mount Everest Kennel Club"><span>Dogs</span></div>
+          <div class="hostel-card__body"><p class="hostel-location">Baneshwor Height, Kathmandu</p><h3>Mount Everest Kennel Club</h3><p class="hostel-description">Kennel-based boarding for dog owners in the Baneshwor area.</p><div class="service-tags"><span>Boarding</span><span>Kennel</span></div><button class="hostel-details-button" type="button">View details <span>&#8594;</span></button></div>
+        </article>
+
+        <article class="hostel-card" data-name="Pet Villa Nepal" data-location="Kirtipur, Kathmandu" data-pets="Dogs and cats" data-services="boarding daycare" data-service-label="Pet boarding and overnight care" data-phone="+977 9851048362" data-website="">
+          <div class="hostel-card__image"><img src="../images/petvilla.jpg" alt="Pet Villa Nepal"><span>Dogs &amp; cats</span></div>
+          <div class="hostel-card__body"><p class="hostel-location">Kirtipur, Kathmandu</p><h3>Pet Villa Nepal</h3><p class="hostel-description">Boarding and overnight care for dogs and cats in Kirtipur.</p><div class="service-tags"><span>Boarding</span><span>Overnight care</span></div><button class="hostel-details-button" type="button">View details <span>&#8594;</span></button></div>
+        </article>
+      </div>
+
+      <div class="hostel-empty" hidden><span>&#128062;</span><h3>No hostels found</h3><p>Try another search term or choose a different service.</p></div>
+    </section>
+
+    <section class="boarding-note" aria-labelledby="boarding-note-title"><div><span class="hostel-kicker">BEFORE YOU BOOK</span><h2 id="boarding-note-title">A smoother stay starts with a quick conversation.</h2></div><p>Contact the provider to confirm current availability, pricing, vaccination requirements, feeding routines, and any medication your pet needs.</p></section>
+  </main>
+
+  <dialog class="hostel-dialog" aria-labelledby="hostel-dialog-name">
+    <form method="dialog"><button class="hostel-dialog__close" type="submit" value="close" aria-label="Close hostel details">&times;</button></form>
+    <span class="hostel-kicker">HOSTEL DETAILS</span><h2 id="hostel-dialog-name">Hostel details</h2>
+    <dl><div><dt>Location</dt><dd data-hostel-dialog="location"></dd></div><div><dt>Pets</dt><dd data-hostel-dialog="pets"></dd></div><div><dt>Services</dt><dd data-hostel-dialog="services"></dd></div></dl>
+    <div class="hostel-dialog__actions"><a class="hostel-call" href="#">Call provider</a><a class="hostel-website" href="#" target="_blank" rel="noopener">Visit website</a></div>
+  </dialog>
+
+  <footer class="pawpal-site-footer">
+    <div class="pawpal-footer-grid">
+      <div class="pawpal-footer-column"><h2>Explore PawPal</h2><div class="pawpal-footer-links"><a href="home.html">Home</a><a href="about.html">About</a><a href="adopt.html">Adopt a Pet</a><a href="gallery.html">Gallery</a><a href="appointments.html">Appointments</a><a href="hostel.html">Pet Hostels</a><a href="career1.html">Careers</a><a href="contact.html">Contact</a></div></div>
+      <div class="pawpal-footer-column pawpal-footer-brand"><img src="../images/pawpal.png" alt=""><strong>PawPal</strong><p>Better care. Happier pets. Forever homes.</p></div>
+      <div class="pawpal-footer-column pawpal-footer-contact"><h2>Get in touch</h2><p><a href="mailto:pawpal311@gmail.com">pawpal311@gmail.com</a></p><p><a href="tel:+9779841223345">+977&nbsp;9841223345</a></p><p>Kathmandu, Nepal</p></div>
+    </div>
+    <p class="pawpal-footer-bottom">&copy; 2026 PawPal. All rights reserved.</p>
+  </footer>
+</body>
+</html>

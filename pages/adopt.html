@@ -1,311 +1,182 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PawPal</title>
-     <link rel="icon" type="image/png" href="../images/pawpal.png">
-    <link rel="stylesheet" href="../style/adoptstyle.css">
-    <script src="../js/adoptscript.js" defer ></script>
-   <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700&display=swap" rel="stylesheet">
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-  </head>
-    <body>
-        <nav class="navbar">
-      <div class="nav-container">
-        <a href="home.html" class="nav-logo">
-            <img src="../images/pawpal.png" alt="" class="nav-icon">PawPal</a>
-        <ul class="nav-menu">
-          <li><a href="mainHome.html">Home</a></li>
-            <li> <a href="about.html">About</a></li>
-            <li class="dropdown"> <a href="#">Services <i class="fa fa-caret-down"></i></a>
-  <ul class="dropdown-menu">
-    <li><a href="adopt.html">Pet Adoption</a></li>
-    <li><a href="appointments.html">Pet Appointments</a></li>
-    <li><a href="hostel.html">Pet Hostels</a></li>
-    <li><a href="gallery.html">Pet Gallery</a></li>
-  </ul>
-</li>
-            <li> <a href="contact.html">Contact</a></li>
-             <li><a href="../index.html" class="btn-nav">LogOut</a></li>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Meet dogs and cats waiting for a loving home through PawPal.">
+  <title>Adopt a Pet | PawPal</title>
+  <link rel="icon" type="image/png" href="../images/pawpal.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style/adoptstyle.css">
+  <link rel="stylesheet" href="../style/site.css">
+  <script src="../js/site.js" defer></script>
+  <script src="../js/adoptscript.js" defer></script>
+</head>
+<body>
+  <div class="pawpal-site-header">
+    <nav class="pawpal-site-nav" aria-label="Main navigation">
+      <a class="pawpal-brand" href="home.html"><img src="../images/pawpal.png" alt=""><span>PawPal</span></a>
+      <button class="pawpal-menu-toggle" type="button" aria-expanded="false" aria-controls="pawpal-navigation" aria-label="Open navigation menu"><span></span><span></span><span></span></button>
+      <div class="pawpal-nav-content" id="pawpal-navigation">
+        <ul class="pawpal-nav-links">
+          <li><a href="home.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li class="pawpal-services">
+            <button class="pawpal-services-toggle" type="button" aria-expanded="false">Services <span class="pawpal-chevron" aria-hidden="true">&#9660;</span></button>
+            <ul class="pawpal-submenu">
+              <li><a href="adopt.html">Pet Adoption</a></li>
+              <li><a href="appointments.html">Vet Appointments</a></li>
+              <li><a href="hostel.html">Pet Hostels</a></li>
+              <li><a href="gallery.html">Pet Gallery</a></li>
+            </ul>
+          </li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="career1.html">Careers</a></li>
         </ul>
-     </div>
+        <a class="pawpal-nav-action" href="../index.html">Log In</a>
+      </div>
     </nav>
-    <header>  
-    <div class="main-content">
-        <div class="left">
-         <h1 class="h1-head">Safely Adopt your Pet..<br>
-           <span class="h">Find Your Forever Friend.<br>"Every paw deserves a loving home, and every home deserves unconditional love."</span>
-            <img src="../images/love.png" alt="" class="love">
-         </h1>
-      </div>
-    </div>
-    </header>
-        <main>
-        <div class="container">
-            <button onclick="previousSlide()" class="slide-button">❮</button>
-            <div class ="mainpet-card">
-                <div class="petcards" id="slider">
-                    <div class="petcard">
-                        <div class="content">
-                            <div class="img">
-                                <img src="../images/siberianHusky.jpg" alt="Dog 1">
-                            </div>
-                            <div class="details">
-                                <div class="petname">Buddy</div>
-                                <button class="open">Read More</button>
-                                <div class="info">
-                                <div class="info-inner">
-                                    <h2>Buddy</h2>
-                                    <p>Location: Budhanilkantha,Kathmandu<br>
-                                     Age:3 years<br>
-                                     Breed: Siberian Husky<br>
-                                     Contact: +977-9841234567<br>
-                                     Adoption Fee: Rs.15000(negotiable)</p>
-                                    <button class="close">Close</button>
-                                </div>
-                            </div>
-                            </div>
-                            
-                        </div>
-                    </div>
-                        <div class="petcard">
-                        <div class="content">
-                            <div class="img">
-                                <img src="../images/labrador.jpg" alt="Dog 1">
-                            </div>
-                            <div class="details">
-                                <div class="petname">Simba</div>
-                                <button class="open">Read More</button>
-                                <div class="info">
-                                <div class="info-inner">
-                                    <h2>Simba</h2>
-                                    <p>Location: Lalitpur,Nepal<br>
-                                     Age:2 years<br>
-                                     Breed: Labrador<br>
-                                     Contact: +977-9851123456<br>
-                                     Adoption Fee: Rs.12000(negotiable)</p>
-                                    <button class="close">Close</button>
-                                </div>
-                            </div>
-                            </div>
-                            
-                        </div>
-                    </div>
-                    <div class="petcard">
-                        <div class="content">
-                            <div class="img">
-                                <img src="../images/goldenretriever.jpg" alt="Dog 1">
-                            </div>
-                           <div class="details">
-                                <div class="petname">Lycan</div>
-                                <button class="open">Read More</button>
-                                <div class="info">
-                                <div class="info-inner">
-                                    <h2>Lycan</h2>
-                                    <p>Location: Bhaktapur,Nepal<br>
-                                     Age:2 years<br>
-                                     Breed: Golden Retriver<br>
-                                     Contact: +977-9861234567<br>
-                                     Adoption Fee: Rs.18000(negotiable)</p>
-                                    <button class="close">Close</button>
-                                </div>
-                            </div>
-                            </div>
-                            
-                        </div>
-                    </div>
-                        <div class="petcard">
-                        <div class="content">
-                            <div class="img">
-                                <img src="../images/normal.jpg" alt="Dog 1">
-                            </div>
-                            <div class="details">
-                                <div class="petname">Sheru</div>
-                                <button class="open">Read More</button>
-                                <div class="info">
-                                <div class="info-inner">
-                                    <h2>Sheru</h2>
-                                    <p>Location: Basundhara,Kathmandu<br>
-                                     Age:5 years<br>
-                                     Breed: Nepali Local Dog<br>
-                                     Contact: +977-9801234567
-                                     Adoption Fee: Free</p>
-                                    <button class="close">Close</button>
-                                </div>
-                            </div>
-                            </div>
-                            
-                        </div>
-                    </div>
-                    <div class="petcard">
-                        <div class="content">
-                            <div class="img">
-                                <img src="../images/cat3.jpg" alt="Dog 1">
-                            </div>
-                           <div class="details">
-                                <div class="petname">Luna</div>
-                                <button class="open">Read More</button>
-                                <div class="info">
-                                <div class="info-inner">
-                                    <h2>Luna</h2>
-                                    <p>Location: baneshwor,Kathmandu<br>
-                                     Age:8 months<br>
-                                     Breed: Persian Mix<br>
-                                     Contact: +977-9817654321<br>
-                                     Adoption Fee: 5000</p>
-                                    <button class="close">Close</button>
-                                </div>
-                            </div>
-                            </div>
-                            
-                        </div>
-                    </div>
-                    <div class="petcard">
-                        <div class="content">
-                            <div class="img">
-                                <img src="../images/cat1.jpg" alt="Dog 1">
-                            </div>
-                            <div class="details">
-                                <div class="petname">Milo</div>
-                                <button class="open">Read More</button>
-                                <div class="info">
-                                <div class="info-inner">
-                                    <h2>Milo</h2>
-                                    <p>Location: Dillibazar,Kathmandu<br>
-                                     Age:6 months<br>
-                                     Breed: Orange Tabby<br>
-                                     Contact: +977-9817654321<br>
-                                     Adoption Fee: 2500</p>
-                                    <button class="close">Close</button>
-                                </div>
-                            </div>
-                            </div>
-                            
-                        </div>
-                    </div>
-                    <div class="petcard">
-                        <div class="content">
-                            <div class="img">
-                                <img src="../images/cat2.jpg" alt="Dog 1">
-                            </div>
-                           <div class="details">
-                                <div class="petname">Tuna</div>
-                                <button class="open">Read More</button>
-                                <div class="info">
-                                <div class="info-inner">
-                                    <h2>Tuna</h2>
-                                    <p>Location: Putalisadak,Kathmandu<br>
-                                     Age:4 months<br>
-                                     Breed: White Domestic Cat<br>
-                                     Contact: +977-9817654321<br>
-                                     Adoption Fee: 3000</p>
-                                    <button class="close">Close</button>
-                                </div>
-                            </div>
-                            </div>
-                            
-                        </div>
-                    </div>
-                        <div class="petcard">
-                        <div class="content">
-                            <div class="img">
-                                <img src="../images/cat.jpg" alt="Dog 1">
-                            </div>
-                           <div class="details">
-                                <div class="petname">Billu</div>
-                                <button class="open">Read More</button>
-                                <div class="info">
-                                <div class="info-inner">
-                                    <h2>Billu</h2>
-                                    <p>Location: Tarkeswor,Bhaktapur<br>
-                                     Age:2 months<br>
-                                     Breed: Normal<br>
-                                     Contact: +977-982671075<br>
-                                     Adoption Fee: 6000</p>
-                                    <button class="close">Close</button>
-                                </div>
-                            </div>
-                            </div>
-                            
-                        </div>
-                    </div>
-                    <div class="petcard">
-                        <div class="content">
-                            <div class="img">
-                                <img src="../images/cat.jpg" alt="Dog 1">
-                            </div>
-                            <div class="details">
-                                <div class="petname">Sweetie</div>
-                                <button class="open">Read More</button>
-                                <div class="info">
-                                <div class="info-inner">
-                                    <h2>Sweetie</h2>
-                                   <p>Location: Chapali,Kathmandu<br>
-                                     Age:9 months<br>
-                                     Breed: Domestic Cat<br>
-                                     Contact: +977-981234579<br>
-                                     Adoption Fee: 8000</p>
-                                    <button class="close">Close</button>
-                                </div>
-                            </div>
-                            </div>
-                        </div>
-                    </div>
-                   </div>
-            </div> 
-            <button onclick="nextSlide()" class="slide-button">❯</button>
-       </div>
-    </main>
-        <footer id="footer">
-     <div class="footer-container">
-      <div class="footer-links">
-        <h2>Quick Links</h2>
-        <div class="link-container">
-        <div class="links">
-        <a href="mainHome.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="about.html">Adopt Pets</a>
-        <a href="gallery.html">Pet Gallery</a>
-      </div>
-      <div class="links">
-        <a href="appointments.html">Pet Appointments</a>
-        <a href="hostel.html">Pet Hostels</a>
-        <a href="career1.html">Career</a>
-        <a href="contact.html">Contact Us</a>
-      </div>
-      </div>
-      </div>
-      <div class="footer-brand">
-        <h1>PAWPAL</h1>
-        <p>find your pets now!</p>
-        <div class="socials">
-          <a href=""><i class="fa-brands fa-facebook-f"></i> </a>
-          <a href=""><i class="fa-brands fa-tiktok"></i> </a>
-          <a href=""><i class="fa-brands fa-twitter"></i> </a>
-        </div>
-      </div> 
-      <div class="footer-contact-info">
-        <div class="contact-info-item">
-          <i class="fa-regular fa envelope"></i>
-          <p>Pawpal311@gmail.com</p>
-        </div>
-        <div class="contact-info-item">
-          <i class="fa-solid fa-phone"></i>
-          <p>+977 9841223345</p>
-      </div>
-     </div>
-    </div>
-     <p class="copyright">All Rights Reserved to <b> PAWPAL</b></p>
-       </footer>
-        <script>
+  </div>
 
-        </script>
-        </body>
-        </html>
+  <header class="adoption-hero">
+    <div class="adoption-hero__glow adoption-hero__glow--one"></div>
+    <div class="adoption-hero__glow adoption-hero__glow--two"></div>
+    <div class="adoption-hero__content">
+      <span class="adoption-eyebrow">&#128062; Find your new best friend</span>
+      <h1>A forever home starts with <span>one hello.</span></h1>
+      <p>Meet loving pets from around Kathmandu, learn their stories, and take the first step toward adoption.</p>
+      <ul class="adoption-highlights" aria-label="Adoption benefits">
+        <li>Health-checked pets</li>
+        <li>Local connections</li>
+        <li>Simple adoption process</li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+    <section class="adoption-section" aria-labelledby="adoption-title">
+      <div class="adoption-heading">
+        <div>
+          <span class="section-kicker">READY FOR A LOVING HOME</span>
+          <h2 id="adoption-title">Pets waiting to meet you</h2>
+          <p>Use the filters or swipe through the cards to find the companion who feels right for you.</p>
+        </div>
+        <div class="adoption-controls" role="group" aria-label="Pet carousel controls">
+          <button class="adoption-arrow adoption-prev" type="button" aria-label="Show previous pets">&#8592;</button>
+          <button class="adoption-arrow adoption-next" type="button" aria-label="Show next pets">&#8594;</button>
+        </div>
+      </div>
+
+      <div class="pet-filters" role="group" aria-label="Filter available pets">
+        <button class="pet-filter is-active" type="button" data-filter="all">All pets</button>
+        <button class="pet-filter" type="button" data-filter="dog">Dogs</button>
+        <button class="pet-filter" type="button" data-filter="cat">Cats</button>
+      </div>
+
+      <div class="adoption-track" tabindex="0">
+        <article class="adoption-card" data-type="dog" data-name="Buddy" data-breed="Siberian Husky" data-age="3 years" data-location="Budhanilkantha, Kathmandu" data-fee="Rs. 15,000 (negotiable)" data-contact="+977 9841234567">
+          <div class="adoption-card__image"><img src="../images/siberianHusky.jpg" alt="Buddy, a Siberian Husky" draggable="false"><span class="availability-badge">Available</span><button class="favorite-pet" type="button" aria-label="Save Buddy" aria-pressed="false">&#9825;</button></div>
+          <div class="adoption-card__body"><div class="pet-type">Dog &middot; Siberian Husky</div><h3>Buddy</h3><p>Playful, clever, and always ready for an outdoor adventure.</p><div class="pet-facts"><span>3 years</span><span>Budhanilkantha</span></div><button class="pet-details-button" type="button">Meet Buddy <span>&#8594;</span></button></div>
+        </article>
+
+        <article class="adoption-card" data-type="dog" data-name="Simba" data-breed="Labrador" data-age="2 years" data-location="Lalitpur, Nepal" data-fee="Rs. 12,000 (negotiable)" data-contact="+977 9851123456">
+          <div class="adoption-card__image"><img src="../images/labrador.jpg" alt="Simba, a Labrador" draggable="false"><span class="availability-badge">Available</span><button class="favorite-pet" type="button" aria-label="Save Simba" aria-pressed="false">&#9825;</button></div>
+          <div class="adoption-card__body"><div class="pet-type">Dog &middot; Labrador</div><h3>Simba</h3><p>Gentle, social, and happiest when spending time with people.</p><div class="pet-facts"><span>2 years</span><span>Lalitpur</span></div><button class="pet-details-button" type="button">Meet Simba <span>&#8594;</span></button></div>
+        </article>
+
+        <article class="adoption-card" data-type="dog" data-name="Lycan" data-breed="Golden Retriever" data-age="2 years" data-location="Bhaktapur, Nepal" data-fee="Rs. 18,000 (negotiable)" data-contact="+977 9861234567">
+          <div class="adoption-card__image"><img src="../images/goldenretriever.jpg" alt="Lycan, a Golden Retriever" draggable="false"><span class="availability-badge">Available</span><button class="favorite-pet" type="button" aria-label="Save Lycan" aria-pressed="false">&#9825;</button></div>
+          <div class="adoption-card__body"><div class="pet-type">Dog &middot; Golden Retriever</div><h3>Lycan</h3><p>Warm-hearted, loyal, and a wonderful match for a family.</p><div class="pet-facts"><span>2 years</span><span>Bhaktapur</span></div><button class="pet-details-button" type="button">Meet Lycan <span>&#8594;</span></button></div>
+        </article>
+
+        <article class="adoption-card" data-type="dog" data-name="Sheru" data-breed="Nepali Local Dog" data-age="5 years" data-location="Basundhara, Kathmandu" data-fee="Free adoption" data-contact="+977 9801234567">
+          <div class="adoption-card__image"><img src="../images/normal.jpg" alt="Sheru, a Nepali local dog" draggable="false"><span class="availability-badge">Available</span><button class="favorite-pet" type="button" aria-label="Save Sheru" aria-pressed="false">&#9825;</button></div>
+          <div class="adoption-card__body"><div class="pet-type">Dog &middot; Local breed</div><h3>Sheru</h3><p>Calm, devoted, and looking for a peaceful place to call home.</p><div class="pet-facts"><span>5 years</span><span>Basundhara</span></div><button class="pet-details-button" type="button">Meet Sheru <span>&#8594;</span></button></div>
+        </article>
+
+        <article class="adoption-card" data-type="cat" data-name="Luna" data-breed="Persian Mix" data-age="8 months" data-location="Baneshwor, Kathmandu" data-fee="Rs. 5,000" data-contact="+977 9817654321">
+          <div class="adoption-card__image"><img src="../images/cat3.jpg" alt="Luna, a Persian mix cat" draggable="false"><span class="availability-badge">Available</span><button class="favorite-pet" type="button" aria-label="Save Luna" aria-pressed="false">&#9825;</button></div>
+          <div class="adoption-card__body"><div class="pet-type">Cat &middot; Persian Mix</div><h3>Luna</h3><p>Curious, affectionate, and fond of quiet afternoon naps.</p><div class="pet-facts"><span>8 months</span><span>Baneshwor</span></div><button class="pet-details-button" type="button">Meet Luna <span>&#8594;</span></button></div>
+        </article>
+
+        <article class="adoption-card" data-type="cat" data-name="Milo" data-breed="Orange Tabby" data-age="6 months" data-location="Dillibazar, Kathmandu" data-fee="Rs. 2,500" data-contact="+977 9817654321">
+          <div class="adoption-card__image"><img src="../images/cat1.jpg" alt="Milo, an orange tabby cat" draggable="false"><span class="availability-badge">Available</span><button class="favorite-pet" type="button" aria-label="Save Milo" aria-pressed="false">&#9825;</button></div>
+          <div class="adoption-card__body"><div class="pet-type">Cat &middot; Orange Tabby</div><h3>Milo</h3><p>Cheerful, cuddly, and ready to turn anything into a toy.</p><div class="pet-facts"><span>6 months</span><span>Dillibazar</span></div><button class="pet-details-button" type="button">Meet Milo <span>&#8594;</span></button></div>
+        </article>
+
+        <article class="adoption-card" data-type="cat" data-name="Tuna" data-breed="Domestic Cat" data-age="4 months" data-location="Putalisadak, Kathmandu" data-fee="Rs. 3,000" data-contact="+977 9817654321">
+          <div class="adoption-card__image"><img src="../images/cat2.jpg" alt="Tuna, a white domestic cat" draggable="false"><span class="availability-badge">Available</span><button class="favorite-pet" type="button" aria-label="Save Tuna" aria-pressed="false">&#9825;</button></div>
+          <div class="adoption-card__body"><div class="pet-type">Cat &middot; Domestic</div><h3>Tuna</h3><p>Sweet, energetic, and eager to explore a loving new home.</p><div class="pet-facts"><span>4 months</span><span>Putalisadak</span></div><button class="pet-details-button" type="button">Meet Tuna <span>&#8594;</span></button></div>
+        </article>
+
+        <article class="adoption-card" data-type="cat" data-name="Billu" data-breed="Domestic Cat" data-age="2 months" data-location="Tarkeshwor, Kathmandu" data-fee="Rs. 6,000" data-contact="+977 982671075">
+          <div class="adoption-card__image"><img src="../images/cat4.jpg" alt="Billu, a domestic kitten" draggable="false"><span class="availability-badge">Available</span><button class="favorite-pet" type="button" aria-label="Save Billu" aria-pressed="false">&#9825;</button></div>
+          <div class="adoption-card__body"><div class="pet-type">Cat &middot; Domestic</div><h3>Billu</h3><p>A tiny, gentle kitten who loves warmth and friendly company.</p><div class="pet-facts"><span>2 months</span><span>Tarkeshwor</span></div><button class="pet-details-button" type="button">Meet Billu <span>&#8594;</span></button></div>
+        </article>
+
+        <article class="adoption-card" data-type="dog" data-name="Jacks" data-breed="Golden Retriever" data-age="Young puppy" data-location="Kathmandu, Nepal" data-fee="Contact PawPal" data-contact="+977 9841223345">
+          <div class="adoption-card__image"><img src="../images/pic/pic/pets1.jpg" alt="Jacks, a Golden Retriever puppy" draggable="false"><span class="availability-badge">Available</span><button class="favorite-pet" type="button" aria-label="Save Jacks" aria-pressed="false">&#9825;</button></div>
+          <div class="adoption-card__body"><div class="pet-type">Dog &middot; Golden Retriever</div><h3>Jacks</h3><p>Friendly, playful, and excited to grow up with a loving family.</p><div class="pet-facts"><span>Young puppy</span><span>Kathmandu</span></div><button class="pet-details-button" type="button">Meet Jacks <span>&#8594;</span></button></div>
+        </article>
+
+        <article class="adoption-card" data-type="cat" data-name="Juju" data-breed="Tuxedo Cat" data-age="Young adult" data-location="Kathmandu, Nepal" data-fee="Contact PawPal" data-contact="+977 9841223345">
+          <div class="adoption-card__image"><img src="../images/pic/pic/pets2.jpg" alt="Juju, a black and white tuxedo cat" draggable="false"><span class="availability-badge">Available</span><button class="favorite-pet" type="button" aria-label="Save Juju" aria-pressed="false">&#9825;</button></div>
+          <div class="adoption-card__body"><div class="pet-type">Cat &middot; Tuxedo</div><h3>Juju</h3><p>Calm, affectionate, and happiest beside a patient companion.</p><div class="pet-facts"><span>Young adult</span><span>Kathmandu</span></div><button class="pet-details-button" type="button">Meet Juju <span>&#8594;</span></button></div>
+        </article>
+
+        <article class="adoption-card" data-type="cat" data-name="Moomin" data-breed="Domestic Shorthair" data-age="Young adult" data-location="Kathmandu, Nepal" data-fee="Contact PawPal" data-contact="+977 9841223345">
+          <div class="adoption-card__image"><img src="../images/pic/pic/pets3.jpg" alt="Moomin, a white domestic shorthair cat" draggable="false"><span class="availability-badge">Available</span><button class="favorite-pet" type="button" aria-label="Save Moomin" aria-pressed="false">&#9825;</button></div>
+          <div class="adoption-card__body"><div class="pet-type">Cat &middot; Domestic Shorthair</div><h3>Moomin</h3><p>Curious, gentle, and always ready to investigate something new.</p><div class="pet-facts"><span>Young adult</span><span>Kathmandu</span></div><button class="pet-details-button" type="button">Meet Moomin <span>&#8594;</span></button></div>
+        </article>
+
+        <article class="adoption-card" data-type="dog" data-name="Silu" data-breed="Sheepdog Mix" data-age="Young dog" data-location="Kathmandu, Nepal" data-fee="Contact PawPal" data-contact="+977 9841223345">
+          <div class="adoption-card__image"><img src="../images/pic/pic/pets4.jpg" alt="Silu, a black and white sheepdog mix" draggable="false"><span class="availability-badge">Available</span><button class="favorite-pet" type="button" aria-label="Save Silu" aria-pressed="false">&#9825;</button></div>
+          <div class="adoption-card__body"><div class="pet-type">Dog &middot; Sheepdog Mix</div><h3>Silu</h3><p>Sweet, energetic, and ready for playtime with an active family.</p><div class="pet-facts"><span>Young dog</span><span>Kathmandu</span></div><button class="pet-details-button" type="button">Meet Silu <span>&#8594;</span></button></div>
+        </article>
+
+        <article class="adoption-card" data-type="dog" data-name="Milo" data-breed="Welsh Corgi" data-age="Young dog" data-location="Kathmandu, Nepal" data-fee="Contact PawPal" data-contact="+977 9841223345">
+          <div class="adoption-card__image"><img src="../images/pic/pic/pets5.jpg" alt="Milo, a Welsh Corgi" draggable="false"><span class="availability-badge">Available</span><button class="favorite-pet" type="button" aria-label="Save Milo" aria-pressed="false">&#9825;</button></div>
+          <div class="adoption-card__body"><div class="pet-type">Dog &middot; Welsh Corgi</div><h3>Milo</h3><p>Loyal, loving, and full of bright-eyed personality.</p><div class="pet-facts"><span>Young dog</span><span>Kathmandu</span></div><button class="pet-details-button" type="button">Meet Milo <span>&#8594;</span></button></div>
+        </article>
+
+        <article class="adoption-card" data-type="dog" data-name="Coco" data-breed="Australian Cattle Dog" data-age="Adult" data-location="Kathmandu, Nepal" data-fee="Contact PawPal" data-contact="+977 9841223345">
+          <div class="adoption-card__image"><img src="../images/pic/pic/pets6.jpg" alt="Coco, an Australian Cattle Dog" draggable="false"><span class="availability-badge">Available</span><button class="favorite-pet" type="button" aria-label="Save Coco" aria-pressed="false">&#9825;</button></div>
+          <div class="adoption-card__body"><div class="pet-type">Dog &middot; Cattle Dog</div><h3>Coco</h3><p>Happy, social, and eager to join every family adventure.</p><div class="pet-facts"><span>Adult</span><span>Kathmandu</span></div><button class="pet-details-button" type="button">Meet Coco <span>&#8594;</span></button></div>
+        </article>
+
+        <article class="adoption-card" data-type="dog" data-name="Luna" data-breed="Toy Poodle" data-age="Young adult" data-location="Kathmandu, Nepal" data-fee="Contact PawPal" data-contact="+977 9841223345">
+          <div class="adoption-card__image"><img src="../images/pic/pic/pets7.jpg" alt="Luna, a brown Toy Poodle" draggable="false"><span class="availability-badge">Available</span><button class="favorite-pet" type="button" aria-label="Save Luna" aria-pressed="false">&#9825;</button></div>
+          <div class="adoption-card__body"><div class="pet-type">Dog &middot; Toy Poodle</div><h3>Luna</h3><p>Quiet, cuddly, and happiest close to someone she trusts.</p><div class="pet-facts"><span>Young adult</span><span>Kathmandu</span></div><button class="pet-details-button" type="button">Meet Luna <span>&#8594;</span></button></div>
+        </article>
+
+        <article class="adoption-card" data-type="dog" data-name="Simba" data-breed="Labrador Retriever" data-age="Adult" data-location="Kathmandu, Nepal" data-fee="Contact PawPal" data-contact="+977 9841223345">
+          <div class="adoption-card__image"><img src="../images/pic/pic/pets8.jpg" alt="Simba, a chocolate Labrador Retriever" draggable="false"><span class="availability-badge">Available</span><button class="favorite-pet" type="button" aria-label="Save Simba" aria-pressed="false">&#9825;</button></div>
+          <div class="adoption-card__body"><div class="pet-type">Dog &middot; Labrador Retriever</div><h3>Simba</h3><p>Brave, cheerful, and ready to be a devoted best friend.</p><div class="pet-facts"><span>Adult</span><span>Kathmandu</span></div><button class="pet-details-button" type="button">Meet Simba <span>&#8594;</span></button></div>
+        </article>
+      </div>
+
+      <div class="adoption-progress" aria-hidden="true"><span></span></div>
+      <p class="adoption-count" aria-live="polite"><strong>16</strong> pets available</p>
+    </section>
+  </main>
+
+  <dialog class="adoption-dialog" aria-labelledby="dialog-pet-name">
+    <form method="dialog"><button class="dialog-close" type="submit" value="close" aria-label="Close pet details">&times;</button></form>
+    <span class="dialog-kicker">ADOPTION PROFILE</span>
+    <h2 id="dialog-pet-name">Pet details</h2>
+    <dl><div><dt>Breed</dt><dd data-dialog="breed"></dd></div><div><dt>Age</dt><dd data-dialog="age"></dd></div><div><dt>Location</dt><dd data-dialog="location"></dd></div><div><dt>Adoption fee</dt><dd data-dialog="fee"></dd></div></dl>
+    <a class="dialog-contact" href="#">Contact about this pet</a>
+  </dialog>
+
+  <footer class="pawpal-site-footer">
+    <div class="pawpal-footer-grid">
+      <div class="pawpal-footer-column"><h2>Explore PawPal</h2><div class="pawpal-footer-links"><a href="home.html">Home</a><a href="about.html">About</a><a href="adopt.html">Adopt a Pet</a><a href="gallery.html">Gallery</a><a href="appointments.html">Appointments</a><a href="hostel.html">Pet Hostels</a><a href="career1.html">Careers</a><a href="contact.html">Contact</a></div></div>
+      <div class="pawpal-footer-column pawpal-footer-brand"><img src="../images/pawpal.png" alt=""><strong>PawPal</strong><p>Better care. Happier pets. Forever homes.</p></div>
+      <div class="pawpal-footer-column pawpal-footer-contact"><h2>Get in touch</h2><p><a href="mailto:pawpal311@gmail.com">pawpal311@gmail.com</a></p><p><a href="tel:+9779841223345">+977&nbsp;9841223345</a></p><p>Kathmandu, Nepal</p></div>
+    </div>
+    <p class="pawpal-footer-bottom">&copy; 2026 PawPal. All rights reserved.</p>
+  </footer>
+</body>
+</html>
