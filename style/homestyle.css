@@ -752,9 +752,11 @@ body {
     font-size: 13px;
 }
 
-.pet-details button {
+.pet-details a {
     width: 40px;
     height: 40px;
+    display: grid;
+    place-items: center;
     flex-shrink: 0;
     border: 0;
     border-radius: 50%;
@@ -762,14 +764,17 @@ body {
     color: #e76520;
     cursor: pointer;
     font-size: 18px;
+    text-decoration: none;
     transition: transform 0.2s ease, background-color 0.2s ease,
                 color 0.2s ease;
 }
 
-.pet-details button:hover {
+.pet-details a:hover,
+.pet-details a:focus-visible {
     transform: rotate(8deg);
     background: #f5721a;
     color: #fff;
+    outline: none;
 }
 
 .pets-footer {

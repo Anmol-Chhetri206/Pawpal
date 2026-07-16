@@ -103,7 +103,7 @@ a {
   overflow: hidden;
   background:
     linear-gradient(102deg, rgba(12, 14, 52, 0.94), rgba(12, 14, 52, 0.62)),
-    url("../images/appointment.jpg") center/cover;
+    url("../images/appointment.jpg") calc(50% + 30px) center/cover no-repeat;
 }
 .appointment-hero:after {
   content: "";
@@ -152,23 +152,6 @@ a {
   color: #dedee8;
   font-size: 18px;
   line-height: 1.7;
-}
-.hero-points {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 28px;
-  margin-top: 28px;
-}
-.hero-points span {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 13px;
-  font-weight: 700;
-}
-.hero-points i {
-  color: #ff9b5f;
 }
 .hero-glow {
   position: absolute;
@@ -343,60 +326,6 @@ main {
 }
 .vet-card:hover .vet-photo img {
   transform: scale(1.045);
-}
-.availability {
-  position: absolute;
-  z-index: 2;
-  left: 15px;
-  top: 15px;
-  display: flex;
-  align-items: center;
-  gap: 7px;
-  padding: 8px 11px;
-  border-radius: 30px;
-  background: rgba(255, 255, 255, 0.92);
-  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.12);
-  color: #227b55;
-  font-size: 10px;
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: 0.3px;
-}
-.availability i {
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: #28a86f;
-  box-shadow: 0 0 0 4px rgba(40, 168, 111, 0.13);
-}
-.availability.tomorrow {
-  color: #6d627c;
-}
-.availability.tomorrow i {
-  background: #92869e;
-  box-shadow: 0 0 0 4px rgba(146, 134, 158, 0.13);
-}
-.favorite {
-  position: absolute;
-  z-index: 3;
-  right: 15px;
-  top: 15px;
-  width: 39px;
-  height: 39px;
-  border: 0;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.92);
-  color: var(--navy);
-  font-size: 17px;
-  cursor: pointer;
-  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.12);
-  transition: 0.2s;
-}
-.favorite:hover,
-.favorite.saved {
-  background: #fff0eb;
-  color: var(--orange);
-  transform: scale(1.06);
 }
 .vet-info {
   padding: 22px;
@@ -701,12 +630,6 @@ main {
   color: var(--muted);
   font-size: 13px;
 }
-.booking-doctor-summary .dialog-help {
-  max-width: 480px;
-  margin-top: 9px;
-  color: #575365;
-  line-height: 1.5;
-}
 .dialog-doctor-tags {
   display: flex;
   flex-wrap: wrap;
@@ -735,141 +658,45 @@ main {
 .booking-fieldset legend {
   display: flex;
   align-items: center;
-  gap: 9px;
   margin-bottom: 16px;
   color: var(--navy);
   font-size: 14px;
   font-weight: 800;
 }
-.booking-fieldset legend > span {
-  width: 25px;
-  height: 25px;
-  display: inline-grid;
-  place-items: center;
-  border-radius: 50%;
-  background: var(--navy);
-  color: #fff;
-  font-size: 10px;
-}
-.visit-options {
+.schedule-inputs {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 12px;
+  gap: 15px;
 }
-.visit-option {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding: 15px;
-  border: 1px solid var(--line);
-  border-radius: 10px;
-  cursor: pointer;
-  transition: 0.2s;
-}
-.visit-option:has(input:checked) {
-  border-color: var(--orange);
-  background: #fff7f1;
-  box-shadow: 0 0 0 3px rgba(243, 111, 43, 0.09);
-}
-.visit-option input {
-  position: absolute;
-  opacity: 0;
-}
-.visit-option-icon {
-  width: 39px;
-  height: 39px;
-  display: grid;
-  place-items: center;
-  flex: 0 0 auto;
-  border-radius: 11px;
-  background: #f3f0eb;
-  color: var(--navy);
-}
-.visit-option:has(input:checked) .visit-option-icon {
-  background: var(--orange);
-  color: #fff;
-}
-.visit-option strong,
-.visit-option small {
-  display: block;
-}
-.visit-option strong {
-  color: var(--navy);
-  font-size: 13px;
-}
-.visit-option small {
-  margin-top: 3px;
-  color: var(--muted);
-  font-size: 10px;
-}
-.date-options,
-.time-options {
-  display: grid;
-  gap: 9px;
-}
-.date-options {
-  grid-template-columns: repeat(5, minmax(0, 1fr));
-}
-.time-options {
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-}
-.date-option,
-.time-option {
-  border: 1px solid var(--line);
-  border-radius: 9px;
-  background: #fff;
-  color: #615d6d;
-  cursor: pointer;
-  transition: 0.2s;
-}
-.date-option {
-  padding: 11px 7px;
-}
-.date-option span,
-.date-option strong {
-  display: block;
-}
-.date-option span {
-  font-size: 9px;
-  font-weight: 800;
-  text-transform: uppercase;
-}
-.date-option strong {
-  margin-top: 4px;
-  color: var(--navy);
-  font-size: 14px;
-}
-.time-option {
-  padding: 11px 8px;
+.schedule-inputs label {
+  color: #565264;
   font-size: 12px;
   font-weight: 700;
 }
-.date-option:hover,
-.time-option:hover,
-.date-option.selected,
-.time-option.selected {
+.schedule-inputs input,
+.schedule-inputs select {
+  width: 100%;
+  margin-top: 7px;
+  padding: 12px 13px;
+  border: 1px solid #dfdbd4;
+  border-radius: 10px;
+  outline: 0;
+  background: #fff;
+  color: var(--ink);
+  font: inherit;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.schedule-inputs input:focus,
+.schedule-inputs select:focus {
   border-color: var(--orange);
-  background: var(--orange);
-  color: #fff;
-}
-.date-option.selected strong {
-  color: #fff;
-}
-.time-option:disabled {
-  border-style: dashed;
-  background: #f3f0ec;
-  color: #aaa4ad;
-  cursor: not-allowed;
-  text-decoration: line-through;
+  box-shadow: 0 0 0 3px rgba(243, 111, 43, 0.1);
 }
 .slot-help {
   margin-top: 10px;
   color: #918c99;
   font-size: 10px;
-}
-.slot-help i {
-  margin-right: 5px;
-  color: var(--orange);
 }
 .booking-form-grid {
   display: grid;
@@ -1121,12 +948,6 @@ footer {
   .hero-content > p {
     font-size: 15px;
   }
-  .hero-points {
-    max-width: 340px;
-    margin-left: auto;
-    margin-right: auto;
-    gap: 13px 18px;
-  }
   .vet-section {
     width: min(calc(100% - 28px), 1280px);
     padding-top: 58px;
@@ -1185,12 +1006,6 @@ footer {
   #booking-form {
     padding: 24px 20px;
   }
-  .date-options {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-  .time-options {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
   .footer-container {
     grid-template-columns: 1fr;
   }
@@ -1208,12 +1023,6 @@ footer {
 @media (max-width: 420px) {
   .hero-content h1 {
     font-size: 37px;
-  }
-  .hero-points {
-    max-width: 290px;
-  }
-  .hero-points span {
-    font-size: 11px;
   }
   .section-heading {
     display: block;
@@ -1264,18 +1073,12 @@ footer {
     width: 100%;
     height: 165px;
   }
-  .visit-options,
+  .schedule-inputs,
   .booking-form-grid {
     grid-template-columns: 1fr;
   }
   .full-field {
     grid-column: auto;
-  }
-  .date-options {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-  .time-options {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
   .booking-submit-row {
     align-items: stretch;

@@ -86,15 +86,20 @@ if (adoptionTrack && previousButton && nextButton) {
 
   window.addEventListener('resize', updateCarousel);
   updateCarousel();
-}
 
-document.querySelectorAll('.favorite-pet').forEach((button) => {
-  button.addEventListener('click', () => {
-    const saved = button.getAttribute('aria-pressed') !== 'true';
-    button.setAttribute('aria-pressed', String(saved));
-    button.innerHTML = saved ? '&#9829;' : '&#9825;';
-  });
-});
+  const requestedPetId = new URLSearchParams(window.location.search).get('pet');
+  const requestedPetCard = adoptionCards.find((card) => card.id === requestedPetId);
+
+  if (requestedPetCard) {
+    requestAnimationFrame(() => {
+      const targetPosition = requestedPetCard.getBoundingClientRect().left
+        - adoptionTrack.getBoundingClientRect().left
+        + adoptionTrack.scrollLeft;
+      adoptionTrack.scrollTo({ left: targetPosition, behavior: 'smooth' });
+      window.setTimeout(updateCarousel, 500);
+    });
+  }
+}
 
 document.querySelectorAll('.pet-details-button').forEach((button) => {
   button.addEventListener('click', () => {

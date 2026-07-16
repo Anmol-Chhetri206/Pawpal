@@ -300,28 +300,6 @@ body {
   text-transform: uppercase;
 }
 
-.favorite-pet {
-  position: absolute;
-  top: 13px;
-  right: 13px;
-  width: 42px;
-  height: 42px;
-  display: grid;
-  place-items: center;
-  border: 0;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.92);
-  color: var(--adopt-navy);
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
-  font-size: 1.55rem;
-  cursor: pointer;
-}
-
-.favorite-pet[aria-pressed="true"] {
-  background: var(--adopt-orange);
-  color: #fff;
-}
-
 .adoption-card__body {
   padding: 21px;
 }

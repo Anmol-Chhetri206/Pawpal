@@ -75,15 +75,6 @@ function showToast(message) {
   toastTimer = setTimeout(() => toast.classList.remove('show'), 2800);
 }
 
-document.querySelectorAll('.favorite').forEach(button => {
-  button.addEventListener('click', () => {
-    const saved = button.classList.toggle('saved');
-    button.querySelector('i').className = saved ? 'fa-solid fa-heart' : 'fa-regular fa-heart';
-    button.setAttribute('aria-pressed', saved);
-    showToast(saved ? 'Doctor saved to your favorites.' : 'Doctor removed from favorites.');
-  });
-});
-
 document.querySelectorAll('.book-button').forEach(button => {
   button.addEventListener('click', () => {
     showToast(`${button.dataset.doctor} selected — appointment times are ready.`);

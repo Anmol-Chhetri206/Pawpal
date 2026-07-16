@@ -75,15 +75,6 @@ function showToast(message) {
   toastTimer = setTimeout(() => toast.classList.remove('show'), 2800);
 }
 
-document.querySelectorAll('.favorite').forEach(button => {
-  button.addEventListener('click', () => {
-    const saved = button.classList.toggle('saved');
-    button.querySelector('i').className = saved ? 'fa-solid fa-heart' : 'fa-regular fa-heart';
-    button.setAttribute('aria-pressed', saved);
-    showToast(saved ? 'Doctor saved to your favorites.' : 'Doctor removed from favorites.');
-  });
-});
-
 document.querySelectorAll('.book-button-placeholder').forEach(button => {
   button.addEventListener('click', () => {
     showToast(`${button.dataset.doctor} selected — appointment times are ready.`);
@@ -102,17 +93,10 @@ const timeField = document.querySelector('#booking-time');
 const doctorImage = document.querySelector('#booking-doctor-image');
 const bookingTitle = document.querySelector('#booking-title');
 const doctorSpecialty = document.querySelector('#booking-doctor-specialty');
-const dateOptions = document.querySelector('.date-options');
-const timeOptions = document.querySelector('.time-options');
 const selectionSummary = document.querySelector('#selection-summary');
 const bookingsSection = document.querySelector('#saved-bookings');
 const bookingsList = document.querySelector('.bookings-list');
 const bookingCount = document.querySelector('.booking-count');
-
-const timeSlots = [
-  '9:00 AM', '10:30 AM', '12:00 PM', '2:00 PM',
-  '3:30 PM', '5:00 PM', '6:30 PM', '7:30 PM'
-];
 
 function getBookings() {
   try {
@@ -144,19 +128,6 @@ function dateFromKey(key) {
   return new Date(`${key}T00:00:00`);
 }
 
-function appointmentDates(startsTomorrow) {
-  const dates = [];
-  const date = new Date();
-  date.setHours(0, 0, 0, 0);
-  if (startsTomorrow) date.setDate(date.getDate() + 1);
-
-  while (dates.length < 5) {
-    if (date.getDay() !== 0) dates.push(new Date(date));
-    date.setDate(date.getDate() + 1);
-  }
-  return dates;
-}
-
 function updateSelectionSummary() {
   if (!dateField.value || !timeField.value) {
     selectionSummary.textContent = 'Choose a date and time';
@@ -168,84 +139,22 @@ function updateSelectionSummary() {
     month: 'short',
     day: 'numeric'
   });
-  const visitType = bookingForm.elements.visitType.value;
-  selectionSummary.textContent = `${dateText} at ${timeField.value} · ${visitType}`;
+  selectionSummary.textContent = `${dateText} at ${displayTime(timeField.value)}`;
 }
 
-function slotMinutes(time) {
-  const [clock, period] = time.split(' ');
-  let [hours, minutes] = clock.split(':').map(Number);
-  if (period === 'PM' && hours !== 12) hours += 12;
-  if (period === 'AM' && hours === 12) hours = 0;
-  return hours * 60 + minutes;
+function displayTime(time) {
+  if (!/^\d{2}:\d{2}$/.test(time)) return time;
+  const [hours, minutes] = time.split(':').map(Number);
+  const period = hours >= 12 ? 'PM' : 'AM';
+  return `${hours % 12 || 12}:${String(minutes).padStart(2, '0')} ${period}`;
 }
 
-function renderTimeOptions() {
-  timeOptions.replaceChildren();
-  timeField.value = '';
-  const bookings = getBookings();
-  const doctor = doctorField.value;
-  const now = new Date();
-  const isToday = dateField.value === localDateKey(now);
-  const currentMinutes = now.getHours() * 60 + now.getMinutes();
-
-  timeSlots.forEach(time => {
-    const isTaken = bookings.some(booking =>
-      booking.doctor === doctor &&
-      booking.date === dateField.value &&
-      booking.time === time
-    );
-    const isPast = isToday && slotMinutes(time) <= currentMinutes;
-    const button = document.createElement('button');
-    button.type = 'button';
-    button.className = 'time-option';
-    button.textContent = time;
-    button.disabled = isTaken || isPast;
-    if (isTaken) button.title = 'This time is already booked';
-    if (isPast) button.title = 'This time has already passed';
-    button.addEventListener('click', () => {
-      timeOptions.querySelectorAll('.time-option').forEach(option => option.classList.remove('selected'));
-      button.classList.add('selected');
-      timeField.value = time;
-      updateSelectionSummary();
-    });
-    timeOptions.append(button);
-  });
-
-  const firstAvailable = timeOptions.querySelector('.time-option:not(:disabled)');
-  if (firstAvailable) firstAvailable.click();
-  else updateSelectionSummary();
-}
-
-function renderDateOptions(startsTomorrow) {
-  dateOptions.replaceChildren();
+function configureScheduleInputs(startsTomorrow) {
+  const earliestDate = new Date();
+  if (startsTomorrow) earliestDate.setDate(earliestDate.getDate() + 1);
+  dateField.min = localDateKey(earliestDate);
   dateField.value = '';
-
-  appointmentDates(startsTomorrow).forEach((date, index) => {
-    const button = document.createElement('button');
-    button.type = 'button';
-    button.className = 'date-option';
-    button.setAttribute('role', 'radio');
-    button.setAttribute('aria-checked', 'false');
-    const dayName = index === 0 && !startsTomorrow
-      ? 'Today'
-      : date.toLocaleDateString(undefined, { weekday: 'short' });
-    const dateLabel = date.toLocaleDateString(undefined, { month: 'short', day: 'numeric' });
-    button.innerHTML = `<span>${dayName}</span><strong>${dateLabel}</strong>`;
-    button.addEventListener('click', () => {
-      dateOptions.querySelectorAll('.date-option').forEach(option => {
-        option.classList.remove('selected');
-        option.setAttribute('aria-checked', 'false');
-      });
-      button.classList.add('selected');
-      button.setAttribute('aria-checked', 'true');
-      dateField.value = localDateKey(date);
-      renderTimeOptions();
-    });
-    dateOptions.append(button);
-  });
-
-  dateOptions.querySelector('.date-option')?.click();
+  timeField.value = '';
 }
 
 function openBookingDialog(button) {
@@ -253,7 +162,7 @@ function openBookingDialog(button) {
   const doctor = button.dataset.doctor;
   const image = card.querySelector('.vet-photo img');
   const specialty = card.querySelector('.specialty').textContent;
-  const startsTomorrow = card.querySelector('.availability').classList.contains('tomorrow');
+  const startsTomorrow = card.dataset.startsTomorrow === 'true';
 
   bookingForm.reset();
   doctorField.value = doctor;
@@ -261,7 +170,7 @@ function openBookingDialog(button) {
   doctorImage.alt = doctor;
   bookingTitle.textContent = doctor;
   doctorSpecialty.textContent = specialty;
-  renderDateOptions(startsTomorrow);
+  configureScheduleInputs(startsTomorrow);
   updateSelectionSummary();
 
   if (typeof bookingDialog.showModal === 'function') bookingDialog.showModal();
@@ -287,7 +196,7 @@ function bookingCard(booking) {
   title.textContent = booking.doctor;
   const meta = document.createElement('p');
   meta.className = 'booking-meta';
-  meta.textContent = `${booking.time} · ${booking.visitType}`;
+  meta.textContent = displayTime(booking.time);
   const pet = document.createElement('p');
   pet.textContent = booking.reason
     ? `${booking.petName} (${booking.petType}) · ${booking.reason}`
@@ -323,8 +232,16 @@ document.querySelectorAll('.book-button').forEach(button => {
   button.addEventListener('click', () => openBookingDialog(button));
 });
 
-[...bookingForm.elements.visitType].forEach(option => {
-  option.addEventListener('change', updateSelectionSummary);
+[dateField, timeField].forEach(field => {
+  field.addEventListener('input', updateSelectionSummary);
+  field.addEventListener('click', () => {
+    if (typeof field.showPicker !== 'function') return;
+    try {
+      field.showPicker();
+    } catch {
+      // The input remains usable in browsers that restrict programmatic pickers.
+    }
+  });
 });
 
 closeDialogButton.addEventListener('click', () => bookingDialog.close());
@@ -336,7 +253,26 @@ bookingForm.addEventListener('submit', event => {
   event.preventDefault();
 
   if (!dateField.value || !timeField.value) {
-    showToast('Please choose an available date and time.');
+    showToast('Please choose a date and time.');
+    return;
+  }
+
+  if (dateField.value < dateField.min) {
+    showToast('Please choose an available future date.');
+    dateField.focus();
+    return;
+  }
+
+  if (timeField.value < '10:00' || timeField.value > '16:00') {
+    showToast('Please choose a time between 10:00 AM and 4:00 PM.');
+    timeField.focus();
+    return;
+  }
+
+  const selectedDateTime = new Date(`${dateField.value}T${timeField.value}`);
+  if (selectedDateTime <= new Date()) {
+    showToast('Please choose a future appointment time.');
+    timeField.focus();
     return;
   }
 
@@ -349,8 +285,8 @@ bookingForm.addEventListener('submit', event => {
   );
 
   if (conflict) {
-    showToast('That time was just booked. Please select another slot.');
-    renderTimeOptions();
+    showToast('That time is already booked. Please choose another time.');
+    timeField.focus();
     return;
   }
 
@@ -362,7 +298,6 @@ bookingForm.addEventListener('submit', event => {
     specialty: doctorSpecialty.textContent,
     date: dateField.value,
     time: timeField.value,
-    visitType: formData.get('visitType'),
     petName: formData.get('petName').trim(),
     petType: formData.get('petType'),
     ownerName: formData.get('ownerName').trim(),
